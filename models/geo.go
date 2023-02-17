@@ -1,4 +1,4 @@
-package proto
+package models
 
 type RequestState struct {
 	ConnectionID string `json:"connection_id"`
@@ -14,23 +14,6 @@ type RequestCity struct {
 	CityID   int    `json:"city_id,omitempty"`
 	CityName string `json:"city_name,omitempty"`
 }
-
-const (
-	AddState = iota + 521
-	EditState
-	RemoveState
-	FindStateById
-	ListState
-	ListStatesWithCities
-)
-
-const (
-	AddCity = iota + 531
-	EditCity
-	RemoveCity
-	FindCityByStateId
-	FindCityByCityId
-)
 
 type ResponseState struct {
 	ConnectionID string `json:"connection_id"`
