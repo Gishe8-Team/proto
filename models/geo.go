@@ -35,7 +35,7 @@ type CityModel struct {
 }
 
 type StateModel struct {
-	ID     int         `json:"id"`
-	Name   string      `json:"name"`
-	Cities []CityModel `json:"cities,omitempty"`
+	ID     int           `json:"id"`
+	Name   string        `json:"name"`
+	Cities *[]*CityModel `json:"cities,omitempty"`
 }
