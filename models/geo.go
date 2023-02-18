@@ -1,15 +1,11 @@
 package models
 
 type RequestState struct {
-	ConnectionID string `json:"connection_id"`
-
 	StateID   int    `json:"state_id,omitempty"`
 	StateName string `json:"state_name,omitempty"`
 }
 
 type RequestCity struct {
-	ConnectionID string `json:"connection_id"`
-
 	StateID  int    `json:"state_id,omitempty"`
 	CityID   int    `json:"city_id,omitempty"`
 	CityName string `json:"city_name,omitempty"`
@@ -33,13 +29,13 @@ type ResponseCity struct {
 }
 
 type CityModel struct {
-	ID      string `json:"id"`
+	ID      int    `json:"id"`
 	Name    string `json:"name"`
-	StateID string `json:"state_id,omitempty"`
+	StateID int    `json:"state_id,omitempty"`
 }
 
 type StateModel struct {
-	ID     string      `json:"id"`
+	ID     int         `json:"id"`
 	Name   string      `json:"name"`
 	Cities []CityModel `json:"cities,omitempty"`
 }
