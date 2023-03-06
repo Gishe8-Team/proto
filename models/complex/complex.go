@@ -1,4 +1,4 @@
-package models
+package complex
 
 type ComplexModel struct {
 	ComplexID   string   `json:"complex_id"`
