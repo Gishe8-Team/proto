@@ -18,9 +18,9 @@ const (
 )
 
 const (
-	CreateArrangement         = "12.3.1"
-	EditArrangement           = "12.3.2"
-	DeleteArrangement         = "12.3.3"
-	FindArrangementByCapacity = "12.3.4"
-	FindArrangementByHallID   = "12.3.5"
+	CreateArrangement       = "12.3.1"
+	EditArrangement         = "12.3.2"
+	DeleteArrangement       = "12.3.3"
+	FindArrangements        = "12.3.4"
+	FindArrangementByHallID = "12.3.5"
 )
