@@ -42,4 +42,8 @@ type Seat struct {
 	ProfileID string `json:"profile_id"`
 	//SeatType show which seat type [vip, first class, second class, etc]
 	SeatType string `json:"seat_type"`
+
+	X        float32 `json:"x"`
+	Y        float32 `json:"y"`
+	Rotation float32 `json:"rotation"`
 }
