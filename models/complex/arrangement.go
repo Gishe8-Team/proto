@@ -28,8 +28,15 @@ type Row struct {
 	Seats     []Seat `json:"seats"`
 }
 
+type Layout struct {
+	Seats []Seat `json:"seats"`
+}
+
 // Seat struct define seats metadata
 type Seat struct {
+	ZoneName  string `json:"zone_name"`
+	RowNumber int    `json:"row_number"`
+	Available bool   `json:"available"`
 	//SeatNumber show number of seat in row
 	SeatNumber int64 `json:"seat_number"`
 	//SeatId show seat unique id
