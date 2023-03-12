@@ -9,7 +9,7 @@ type ArrangementModel struct {
 	SeatCount       int      `json:"seat_count"`
 	HaveBalcony     bool     `json:"have_balcony"`
 	SeatArrangement []byte   `json:"seat_arrangement"`
-	Images          []string `json:"images"`
+	ImagesURL       []string `json:"images_url"`
 }
 
 type SeatFormationModel struct {
