@@ -1,4 +1,4 @@
-package statuses
+package errs
 
 import (
 	"errors"
