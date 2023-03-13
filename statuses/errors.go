@@ -1,8 +1,15 @@
 package statuses
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 var (
-	UnmarshallerError = errors.New("unmarshaller error")
-	DataStoreError    = errors.New("data store error")
+	UnmarshalerError = errors.New("unmarshaler error")
+	DataStoreError   = errors.New("data store error")
 )
+
+func WrapError(code any, err error) error {
+	return fmt.Errorf("[code: %s] %s", code, err.Error())
+}
