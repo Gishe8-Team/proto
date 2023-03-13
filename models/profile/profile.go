@@ -13,7 +13,7 @@ type Profile struct {
 	OstanID       int       `json:"ostan_id"`
 	CityID        int       `json:"city_id"`
 	NationalID    string    `json:"national_id,omitempty"`
-	GenderID      int8      `json:"gender_id"`
+	GenderID      int16     `json:"gender_id"`
 	WantReminder  bool      `json:"want_reminder,omitempty"`
 	WantPromotion bool      `json:"want_promotion,omitempty"`
 	AvatarURL     string    `json:"avatar_url,omitempty"`
