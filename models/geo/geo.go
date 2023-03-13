@@ -1,4 +1,4 @@
-package models
+package geo
 
 type RequestState struct {
 	StateID   int    `json:"state_id,omitempty"`

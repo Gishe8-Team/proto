@@ -11,11 +11,11 @@ const (
 )
 
 const (
-	CreateSans           = "6.2.1"
-	EditSans             = "6.2.2"
-	DeleteSans           = "6.2.3"
-	FindSans             = "6.2.4"
-	FindSansByTimeSlotID = "6.2.5"
+	CreateTimeSlot   = "6.2.1"
+	EditTimeSlot     = "6.2.2"
+	DeleteTimeSlot   = "6.2.3"
+	FindTimeSlot     = "6.2.4"
+	FindTimeSlotByID = "6.2.5"
 )
 
 const (
@@ -26,17 +26,16 @@ const (
 )
 
 const (
-	CreateEventState = "6.4.1"
-	EditEventState   = "6.4.2"
-	DeleteEventState = "6.4.3"
-	ListEventStates  = "6.4.4"
+	CreateEventStatus = "6.4.1"
+	EditEventStatus   = "6.4.2"
+	DeleteEventStatus = "6.4.3"
+	ListEventStatus   = "6.4.4"
 )
 
 const (
 	AddEventScore       = "6.5.1"
 	CalculateEventScore = "6.5.2"
 	ListHighScores      = "6.5.3"
-	FindEventByStateID  = "6.5.4"
 )
 
 const (
