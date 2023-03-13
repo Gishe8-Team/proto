@@ -8,7 +8,7 @@ type ComplexModel struct {
 	Email       string   `json:"email"`
 	Phone       string   `json:"phone"`
 	Description string   `json:"description"`
-	Images      []string `json:"images"`
+	ImagesURL   []string `json:"images_url"`
 	CityID      int      `json:"city_id"`
 	StateID     int      `json:"state_id"`
 }
