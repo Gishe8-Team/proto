@@ -2,7 +2,6 @@ package proto
 
 import (
 	"fmt"
-	"github.com/Gishe8-Team/proto/models/event"
 )
 
 type InternalMessage struct {
@@ -15,21 +14,15 @@ type InternalMessage struct {
 	Headers    map[string]string `json:"headers"`
 	StatusCode int               `json:"status_code"`
 	Body       []byte            `json:"body"`
-	Request    ServiceRequests   `json:"request"`
 }
 
 func (im *InternalMessage) String() string {
-	return fmt.Sprintf("[ConnectionId: %s, ServiceID: %s, TrplayTo: %s, RoutingKey: %s, Headers: %+v, StatusCode: %d, Body: %s, Req: %+v]",
+	return fmt.Sprintf("[ConnectionId: %s, ServiceID: %s, TrplayTo: %s, RoutingKey: %s, Headers: %+v, StatusCode: %d, Body: %s]",
 		im.ConnectionID,
 		im.ServiceID,
 		im.ReplayTo,
 		im.RoutingKey,
 		im.Headers,
 		im.StatusCode,
-		string(im.Body),
-		im.Request)
-}
-
-type ServiceRequests struct {
-	event.Services
+		string(im.Body))
 }

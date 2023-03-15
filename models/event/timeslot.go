@@ -1,8 +1,11 @@
 package event
 
-import "time"
+import (
+	"github.com/volatiletech/null/v8"
+	"time"
+)
 
-type TimeSlot struct {
+type TimeslotModel struct {
 	ID            string    `boil:"id" json:"id" toml:"id" yaml:"id"`
 	EventID       string    `boil:"event_id" json:"event_id" toml:"event_id" yaml:"event_id"`
 	HallID        string    `boil:"hall_id" json:"hall_id" toml:"hall_id" yaml:"hall_id"`
@@ -15,11 +18,11 @@ type TimeSlot struct {
 	CreatedAt     time.Time `boil:"created_at" json:"created_at" toml:"created_at" yaml:"created_at"`
 }
 
-type QueryTimeSlot struct {
-	EventID   string `json:"event_id"`
-	HallID    string `json:"hall_id"`
-	StartTime int64  `json:"start_time"`
-	EndTime   int64  `json:"end_time"`
-	Limit     int    `json:"limit"`
-	Offset    int    `json:"offset"`
+type QueryTimeslotModel struct {
+	EventID   null.String `json:"event_id"`
+	HallID    null.String `json:"hall_id"`
+	StartTime null.Int64  `json:"start_time"`
+	EndTime   null.Int64  `json:"end_time"`
+	Limit     null.Int    `json:"limit"`
+	Offset    null.Int    `json:"offset"`
 }

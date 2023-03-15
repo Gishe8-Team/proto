@@ -12,28 +12,28 @@ type ViewFullEventModel struct {
 	Name        string              `boil:"name" json:"name,omitempty" toml:"name" yaml:"name,omitempty"`
 	Description null.String         `boil:"description" json:"description,omitempty" toml:"description" yaml:"description,omitempty"`
 	Score       float64             `boil:"score" json:"score,omitempty"`
-	Type        EventsType          `boil:"type.title" json:"type" toml:"type" yaml:"type"`
-	Status      EventsStatus        `boil:"status.title" json:"status,omitempty" toml:"status" yaml:"status"`
-	Hall        []complex.HallModel `json:"hall" toml:"hall_id" yaml:"hall_id"`
-	State       []geo.StateModel    `json:"state" toml:"state" yaml:"state"`
-	City        []geo.CityModel     `json:"city" toml:"city" yaml:"city"`
-	Category    []Category          `json:"category"`
-	Crew        []Crew              `json:"crew"`
-	TimeSlots   []TimeSlot          `json:"timeslots"`
+	Type        EventsTypeModel     `boil:"type,bind" json:"type" toml:"type" yaml:"type"`
+	Status      EventsStatusModel   `boil:"status,bind." json:"status,omitempty" toml:"status" yaml:"status"`
+	Hall        []complex.HallModel `boil:",bind" json:"hall" toml:"hall_id" yaml:"hall_id"`
+	State       []geo.StateModel    `boil:",bind" json:"state" toml:"state" yaml:"state"`
+	City        []geo.CityModel     `boil:",bind" json:"city" toml:"city" yaml:"city"`
+	Category    []CategoryModel     `boil:",bind" json:"category"`
+	Crew        []EventCrewModel    `boil:",bind" json:"crew"`
+	TimeSlots   []TimeslotModel     `boil:",bind" json:"timeslots"`
 	Cover       string              `boil:"cover" json:"cover" toml:"cover" yaml:"cover"`
 	Poster      string              `boil:"poster" json:"poster" toml:"poster"`
 	Gallery     []string            `boil:"images" json:"images" toml:"images" yaml:"images"`
 }
 
 type ViewSmallEventModel struct {
-	ID          string       `boil:"id" json:"id" toml:"id" yaml:"id"`
-	Name        string       `boil:"name" json:"name,omitempty" toml:"name" yaml:"name,omitempty"`
-	Description null.String  `boil:"description" json:"description,omitempty" toml:"description" yaml:"description,omitempty"`
-	Score       float64      `boil:"score" json:"score,omitempty"`
-	Type        EventsType   `boil:"type.title" json:"type" toml:"type" yaml:"type"`
-	Status      EventsStatus `boil:"status.title" json:"status,omitempty" toml:"status" yaml:"status"`
-	Cover       string       `boil:"cover" json:"cover" toml:"cover" yaml:"cover"`
-	Poster      string       `boil:"poster" json:"poster" toml:"poster"`
+	ID          string            `boil:"id" json:"id" toml:"id" yaml:"id"`
+	Name        string            `boil:"name" json:"name,omitempty" toml:"name" yaml:"name,omitempty"`
+	Description null.String       `boil:"description" json:"description,omitempty" toml:"description" yaml:"description,omitempty"`
+	Score       float64           `boil:"score" json:"score,omitempty"`
+	Type        EventsTypeModel   `boil:"type,bind" json:"type" toml:"type" yaml:"type"`
+	Status      EventsStatusModel `boil:"status,bind" json:"status,omitempty" toml:"status" yaml:"status"`
+	Cover       string            `boil:"cover" json:"cover" toml:"cover" yaml:"cover"`
+	Poster      string            `boil:"poster" json:"poster" toml:"poster"`
 }
 
 type EventModel struct {
@@ -51,19 +51,20 @@ type EventModel struct {
 	Gallery     []string          `boil:"images" json:"images" toml:"images" yaml:"images"`
 }
 
-type QueryEvent struct {
-	Name     string   `json:"name,omitempty"`
-	Type     string   `json:"type_id"`
-	Status   string   `json:"status_id,omitempty"`
-	Hall     []string `json:"hall_id"`
-	State    []string `json:"state_id"`
-	City     []string `json:"city_id"`
-	Category []string `json:"category_id"`
-	Crew     []string `json:"crew_id"`
-	MinScore float64  `json:"minScore"`
-	MaxScore float64  `json:"maxScore"`
-	Limit    int      `json:"limit"`
-	Offset   int      `json:"offset"`
+type QueryEventModel struct {
+	ID       null.String       `json:"id"`
+	Name     null.String       `json:"name,omitempty"`
+	Type     null.String       `json:"type_id"`
+	Status   null.String       `json:"status_id,omitempty"`
+	Hall     types.StringArray `json:"hall_id"`
+	State    types.StringArray `json:"state_id"`
+	City     types.StringArray `json:"city_id"`
+	Category types.StringArray `json:"category_id"`
+	Crew     types.StringArray `json:"crew_id"`
+	MinScore null.Float64      `json:"minScore"`
+	MaxScore null.Float64      `json:"maxScore"`
+	Limit    null.Int          `json:"limit"`
+	Offset   null.Int          `json:"offset"`
 }
 
 type ViewLanding struct {
