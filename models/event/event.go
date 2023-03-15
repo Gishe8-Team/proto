@@ -43,7 +43,7 @@ type EventModel struct {
 	Type        string            `boil:"type_id" json:"type_id" toml:"type" yaml:"type"`
 	Status      string            `boil:"status_id" json:"status_id,omitempty" toml:"status" yaml:"status"`
 	HallID      types.StringArray `boil:"hall_id" json:"hall_id" toml:"hall_id" yaml:"hall_id"`
-	Wage        float64           `boil:"wage" json:"wage" `
+	Fee         float64           `boil:"wage" json:"wage" `
 	State       types.StringArray `json:"state_id" toml:"state" yaml:"state"`
 	City        types.StringArray `json:"city_id" toml:"city" yaml:"city"`
 	Cover       string            `boil:"cover" json:"cover" toml:"cover" yaml:"cover"`
