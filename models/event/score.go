@@ -3,6 +3,7 @@ package event
 import "github.com/volatiletech/null/v8"
 
 type EventsScoreModel struct {
+	Creator string  `json:"creator"`
 	EventID string  `json:"event_id"`
 	Score   float64 `json:"score"`
 }

@@ -6,8 +6,8 @@ import (
 )
 
 type EventCrewModel struct {
-	CrewModel
-	Role null.String `boil:"role" json:"role,omitempty"`
+	CrewModel `boil:",bind"`
+	Role      null.String `boil:"role" json:"role,omitempty"`
 }
 
 type CrewModel struct {
