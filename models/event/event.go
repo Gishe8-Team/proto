@@ -8,25 +8,25 @@ import (
 )
 
 type ViewFullEventModel struct {
-	ID          string                 `boil:"id" json:"id" toml:"id" yaml:"id"`
-	Name        string                 `boil:"name" json:"name,omitempty" toml:"name" yaml:"name,omitempty"`
-	Description null.String            `boil:"description" json:"description,omitempty" toml:"description" yaml:"description,omitempty"`
-	Score       float64                `boil:"score" json:"score,omitempty"`
-	Type        EventsTypeModel        `boil:",bind" json:"type" toml:"type" yaml:"type"`
-	Status      EventsStatusModel      `boil:",bind." json:"status,omitempty" toml:"status" yaml:"status"`
-	Complex     []complex.ComplexModel `boil:"-" json:"complex"`
-	HallIDs     types.StringArray      `boil:"hall_id" json:"hall_ids"`
-	Hall        []complex.HallModel    `boil:"-" json:"halls"`
-	StateIDs    types.StringArray      `boil:"state_id" json:"state_ids"`
-	State       []geo.StateModel       `boil:"-" json:"states"`
-	CityIDs     types.StringArray      `boil:"city_id" json:"city_ids"`
-	City        []geo.CityModel        `boil:"-" json:"cities"`
-	Category    []*CategoryModel       `boil:"-" json:"category"`
-	Crew        []*EventCrewModel      `boil:"-" json:"crew"`
-	TimeSlots   []*TimeslotModel       `boil:"-" json:"timeslots"`
-	Cover       string                 `boil:"cover" json:"cover" toml:"cover" yaml:"cover"`
-	Poster      string                 `boil:"poster" json:"poster" toml:"poster"`
-	Gallery     types.StringArray      `boil:"images" json:"images" toml:"images" yaml:"images"`
+	ID          string                      `boil:"id" json:"id" toml:"id" yaml:"id"`
+	Name        string                      `boil:"name" json:"name,omitempty" toml:"name" yaml:"name,omitempty"`
+	Description null.String                 `boil:"description" json:"description,omitempty" toml:"description" yaml:"description,omitempty"`
+	Score       float64                     `boil:"score" json:"score,omitempty"`
+	Type        EventsTypeModel             `boil:",bind" json:"type" toml:"type" yaml:"type"`
+	Status      EventsStatusModel           `boil:",bind." json:"status,omitempty" toml:"status" yaml:"status"`
+	Complex     []complex.ComplexModel      `boil:"-" json:"complex"`
+	HallIDs     types.StringArray           `boil:"hall_id" json:"hall_ids"`
+	Hall        []complex.HallModel         `boil:"-" json:"halls"`
+	StateIDs    types.StringArray           `boil:"state_id" json:"state_ids"`
+	State       []geo.StateModel            `boil:"-" json:"states"`
+	CityIDs     types.StringArray           `boil:"city_id" json:"city_ids"`
+	City        []geo.CityModel             `boil:"-" json:"cities"`
+	Category    []*CategoryModel            `boil:"-" json:"category"`
+	Crew        []*ViewSingleEventCrewModel `boil:"-" json:"crew"`
+	TimeSlots   []*TimeslotModel            `boil:"-" json:"timeslots"`
+	Cover       string                      `boil:"cover" json:"cover" toml:"cover" yaml:"cover"`
+	Poster      string                      `boil:"poster" json:"poster" toml:"poster"`
+	Gallery     types.StringArray           `boil:"images" json:"images" toml:"images" yaml:"images"`
 }
 
 type ViewSmallEventModel struct {

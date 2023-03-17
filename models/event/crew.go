@@ -5,7 +5,7 @@ import (
 	"github.com/volatiletech/sqlboiler/v4/types"
 )
 
-type EventCrewModel struct {
+type ViewSingleEventCrewModel struct {
 	CrewModel `boil:",bind"`
 	Role      null.String `boil:"role" json:"role,omitempty"`
 }
