@@ -7,7 +7,6 @@ const (
 	ListLandings  = "6.1.4"
 	FindEventByID = "6.1.5"
 	FindEvent     = "6.1.6"
-	ListEvents    = "6.1.7"
 )
 
 const (
@@ -33,15 +32,20 @@ const (
 )
 
 const (
-	AddEventScore       = "6.5.1"
-	CalculateEventScore = "6.5.2"
-	ListHighScores      = "6.5.3"
+	AddEventScore  = "6.5.1"
+	ListEventScore = "6.5.2"
 )
 
 const (
-	AddEventCrew     = "6.6.1"
-	EditEventCrew    = "6.6.2"
-	DeleteEventCrew  = "6.6.3"
-	FindEventCrews   = "6.6.4"
-	FindEventsByCrew = "6.6.5"
+	AddCrew      = "6.6.1"
+	EditCrew     = "6.6.2"
+	DeleteCrew   = "6.6.3"
+	FindCrews    = "6.6.4"
+	FindCrewByID = "6.6.5"
+)
+
+const (
+	AddCrewRole    = "6.7.1"
+	EditCrewRole   = "6.7.2"
+	DeleteCrewRole = "6.7.3"
 )
