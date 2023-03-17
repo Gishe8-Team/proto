@@ -20,7 +20,7 @@ type Profile struct {
 	GenderName    string      `boil:"gender_name" json:"gender_name,omitempty"`
 	WantReminder  null.Bool   `boil:"want_reminder" json:"want_reminder,omitempty"`
 	WantPromotion null.Bool   `boil:"want_promotion" json:"want_promotion,omitempty"`
-	AvatarURL     string      `boil:"avatar_url" json:"avatar_url,omitempty"`
+	AvatarURL     null.String `boil:"avatar_url" json:"avatar_url,omitempty"`
 }
 
 type QueryProfile struct {
