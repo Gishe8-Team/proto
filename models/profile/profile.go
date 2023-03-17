@@ -6,21 +6,21 @@ import (
 )
 
 type Profile struct {
-	ID            uuid.UUID     `boil:"id" json:"id,omitempty"`
-	WalletID      uuid.UUID     `boil:"wallet_id" json:"wallet_id"`
-	ClubID        uuid.NullUUID `boil:"club_id" json:"club_id,omitempty"`
-	IsClubAdmin   null.Bool     `boil:"is_club_admin" json:"is_club_admin,omitempty"`
-	UserID        uuid.UUID     `boil:"user_id" json:"user_id"`
-	FirstName     string        `boil:"first_name" json:"first_name"`
-	LastName      string        `boil:"last_name" json:"last_name"`
-	OstanID       int           `boil:"ostan_id" json:"ostan_id"`
-	CityID        int           `boil:"city_id" json:"city_id"`
-	NationalID    null.String   `boil:"national_id" json:"national_id,omitempty"`
-	GenderID      int16         `boil:"gender_id" json:"gender_id"`
-	GenderName    string        `boil:"gender_name" json:"gender_name,omitempty"`
-	WantReminder  null.Bool     `boil:"want_reminder" json:"want_reminder,omitempty"`
-	WantPromotion null.Bool     `boil:"want_promotion" json:"want_promotion,omitempty"`
-	AvatarURL     string        `boil:"avatar_url" json:"avatar_url,omitempty"`
+	ID            uuid.UUID   `boil:"id" json:"id,omitempty"`
+	WalletID      uuid.UUID   `boil:"wallet_id" json:"wallet_id"`
+	ClubID        null.String `boil:"club_id" json:"club_id,omitempty"`
+	IsClubAdmin   null.Bool   `boil:"is_club_admin" json:"is_club_admin,omitempty"`
+	UserID        uuid.UUID   `boil:"user_id" json:"user_id"`
+	FirstName     string      `boil:"first_name" json:"first_name"`
+	LastName      string      `boil:"last_name" json:"last_name"`
+	OstanID       int         `boil:"ostan_id" json:"ostan_id"`
+	CityID        int         `boil:"city_id" json:"city_id"`
+	NationalID    null.String `boil:"national_id" json:"national_id,omitempty"`
+	GenderID      int16       `boil:"gender_id" json:"gender_id"`
+	GenderName    string      `boil:"gender_name" json:"gender_name,omitempty"`
+	WantReminder  null.Bool   `boil:"want_reminder" json:"want_reminder,omitempty"`
+	WantPromotion null.Bool   `boil:"want_promotion" json:"want_promotion,omitempty"`
+	AvatarURL     string      `boil:"avatar_url" json:"avatar_url,omitempty"`
 }
 
 type QueryProfile struct {
