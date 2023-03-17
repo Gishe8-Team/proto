@@ -15,7 +15,7 @@ type Profile struct {
 	LastName      string      `boil:"last_name" json:"last_name"`
 	OstanID       int         `boil:"ostan_id" json:"ostan_id"`
 	CityID        int         `boil:"city_id" json:"city_id"`
-	NationalID    null.String `boil:"national_id" json:"national_id,omitempty"`
+	NationalID    null.String `boil:"nid" json:"national_id,omitempty"`
 	GenderID      int16       `boil:"gender_id" json:"gender_id"`
 	GenderName    string      `boil:"gender_name" json:"gender_name,omitempty"`
 	WantReminder  null.Bool   `boil:"want_reminder" json:"want_reminder,omitempty"`
