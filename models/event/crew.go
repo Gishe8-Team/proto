@@ -10,6 +10,16 @@ type EventCrewModel struct {
 	Role      null.String `boil:"role" json:"role,omitempty"`
 }
 
+type ViewFullCrewModel struct {
+	CrewModel `boil:",bind"`
+	Roles     []*ViewCrewRoleModel `boil:"-" json:"roles,omitempty"`
+}
+
+type ViewCrewRoleModel struct {
+	Role                string `boil:"role" json:"role,omitempty"`
+	ViewSmallEventModel `boil:",bind" json:"event"`
+}
+
 type CrewModel struct {
 	ID     string            `boil:"id" json:"id" toml:"id" yaml:"id"`
 	Name   null.String       `boil:"name" json:"name,omitempty" toml:"name" yaml:"name,omitempty"`

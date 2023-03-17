@@ -24,3 +24,7 @@ const (
 	FindArrangements        = "12.3.4"
 	FindArrangementByHallID = "12.3.5"
 )
+
+const (
+	FillEventComplexData = "12.10.1"
+)
