@@ -35,6 +35,7 @@ type QueryProfile struct {
 	GenderID      int16     `json:"gender_id,omitempty"`
 	WantReminder  bool      `json:"want_reminder,omitempty"`
 	WantPromotion bool      `json:"want_promotion,omitempty"`
+	AvatarURL     string    `json:"avatar_url,omitempty"`
 	Limit         int       `json:"limit,omitempty"`
 	Offset        int       `json:"offset,omitempty"`
 }
