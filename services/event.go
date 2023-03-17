@@ -45,7 +45,7 @@ const (
 )
 
 const (
-	AddEventCrew    = "6.7.1"
-	EditEventCrew   = "6.7.2"
-	DeleteEventCrew = "6.7.3"
+	AddCrewRole    = "6.7.1"
+	EditCrewRole   = "6.7.2"
+	DeleteCrewRole = "6.7.3"
 )
