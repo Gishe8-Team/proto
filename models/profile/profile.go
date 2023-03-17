@@ -31,6 +31,7 @@ type QueryProfile struct {
 	LastName      string    `json:"last_name,omitempty"`
 	OstanID       int       `json:"ostan_id,omitempty"`
 	CityID        string    `json:"city_id,omitempty"`
+	NationalID    string    `json:"national_id,omitempty"`
 	GenderID      int16     `json:"gender_id,omitempty"`
 	WantReminder  bool      `json:"want_reminder,omitempty"`
 	WantPromotion bool      `json:"want_promotion,omitempty"`
