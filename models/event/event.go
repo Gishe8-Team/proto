@@ -66,8 +66,8 @@ type QueryEventModel struct {
 	City     types.StringArray `json:"city_id"`
 	Category types.StringArray `json:"category_id"`
 	Crew     types.StringArray `json:"crew_id"`
-	MinScore null.Float64      `json:"minScore"`
-	MaxScore null.Float64      `json:"maxScore"`
+	MinScore null.Float64      `json:"min_score"`
+	MaxScore null.Float64      `json:"max_score"`
 	Limit    null.Int          `json:"limit"`
 	Offset   null.Int          `json:"offset"`
 }
