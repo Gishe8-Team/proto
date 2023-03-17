@@ -16,3 +16,7 @@ const (
 	FindCityByStateId = "5.3.4"
 	FindCityByCityId  = "5.3.5"
 )
+
+const (
+	FillEventGeoData = "5.10.1"
+)
