@@ -20,6 +20,14 @@ type ViewCrewRoleModel struct {
 	ViewSmallEventModel `boil:",bind" json:"event"`
 }
 
+type CrewRoleModel struct {
+	ID       string      `boil:"id" json:"id" toml:"id" yaml:"id"`
+	EventID  string      `boil:"event_id" json:"event_id" toml:"event_id" yaml:"event_id"`
+	CrewID   string      `boil:"crew_id" json:"crew_id" toml:"crew_id" yaml:"crew_id"`
+	Role     null.String `boil:"role" json:"role,omitempty" toml:"role" yaml:"role,omitempty"`
+	Position int         `boil:"position" json:"position" toml:"position" yaml:"position"`
+}
+
 type CrewModel struct {
 	ID     string            `boil:"id" json:"id" toml:"id" yaml:"id"`
 	Name   null.String       `boil:"name" json:"name,omitempty" toml:"name" yaml:"name,omitempty"`
