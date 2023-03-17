@@ -18,3 +18,18 @@ type Profile struct {
 	WantPromotion bool      `json:"want_promotion,omitempty"`
 	AvatarURL     string    `json:"avatar_url,omitempty"`
 }
+
+type QueryProfile struct {
+	UserId        uuid.UUID `json:"user_id,omitempty"`
+	ClubID        uuid.UUID `json:"club_id,omitempty"`
+	IsAdmin       bool      `json:"is_admin,omitempty"`
+	FirstName     string    `json:"first_name,omitempty"`
+	LastName      string    `json:"last_name,omitempty"`
+	OstanID       int       `json:"ostan_id,omitempty"`
+	CityID        string    `json:"city_id,omitempty"`
+	GenderID      int16     `json:"gender_id,omitempty"`
+	WantReminder  bool      `json:"want_reminder,omitempty"`
+	WantPromotion bool      `json:"want_promotion,omitempty"`
+	Limit         int       `json:"limit,omitempty"`
+	Offset        int       `json:"offset,omitempty"`
+}
