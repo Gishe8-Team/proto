@@ -17,11 +17,12 @@ type InternalMessage struct {
 }
 
 func (im *InternalMessage) String() string {
-	return fmt.Sprintf("[ConnectionId: %s, ServiceID: %s, TrplayTo: %s, RoutingKey: %s, Headers: %+v, StatusCode: %d, Body: %s]",
+	return fmt.Sprintf("[ConnectionId: %s, ServiceID: %s, RoutingKey: %s, ReplayTo: %s, ReplayServiceID: %s, Headers: %+v, StatusCode: %d, Body: %s]",
 		im.ConnectionID,
 		im.ServiceID,
-		im.ReplayTo,
 		im.RoutingKey,
+		im.ReplayTo,
+		im.ReplayServiceID,
 		im.Headers,
 		im.StatusCode,
 		string(im.Body))

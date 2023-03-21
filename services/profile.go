@@ -10,4 +10,5 @@ const (
 	FindProfileByUserID     = "3.1.7"
 	FindProfileByNationalID = "3.1.8"
 	FindProfileByClubID     = "3.1.9"
+	AddAvatar               = "3.1.10"
 )

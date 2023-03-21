@@ -1,19 +1,19 @@
 package complex
 
 type ComplexModel struct {
-	ComplexID   string   `json:"complex_id"`
-	Name        string   `json:"name"`
-	Geolocation Geoloc   `json:"geolocation"`
-	Address     string   `json:"address"`
-	Email       string   `json:"email"`
-	Phone       string   `json:"phone"`
-	Description string   `json:"description"`
-	ImagesURL   []string `json:"images_url"`
-	CityID      int      `json:"city_id"`
-	StateID     int      `json:"state_id"`
+	ComplexID   string   `boil:"id" json:"complex_id"`
+	Name        string   `boil:"name" json:"name"`
+	Geolocation Geoloc   `boil:"geolocation" json:"geolocation"`
+	Address     string   `boil:"address" json:"address"`
+	Email       string   `boil:"email" json:"email"`
+	Phone       string   `boil:"phone" json:"phone"`
+	Description string   `boil:"description" json:"description"`
+	ImagesURL   []string `boil:"images_url,bind" json:"images_url"`
+	CityID      int      `boil:"city_id" json:"city_id"`
+	StateID     int      `boil:"ostan_id" json:"state_id"`
 }
 
 type Geoloc struct {
-	Latitude  float64 `json:"latitude"`
-	Longitude float64 `json:"longitude"`
+	Latitude  float64 `boil:"latitude" json:"latitude"`
+	Longitude float64 `boil:"longitude" json:"longitude"`
 }
