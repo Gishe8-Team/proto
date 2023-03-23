@@ -18,8 +18,8 @@ type ViewFullEventModel struct {
 	HallIDs     types.StringArray      `boil:"hall_id" json:"hall_ids"`
 	Hall        []complex.HallModel    `boil:"-" json:"halls"`
 	//StateID can be deleted. stateID exists in cityModel
-	StateIDs types.StringArray `boil:"state_id" json:"state_ids"`
-	State    []geo.StateModel  `boil:"-" json:"states"`
+	StateIDs types.Int64Array `boil:"state_id" json:"state_ids"`
+	State    []geo.StateModel `boil:"-" json:"states"`
 	//cityID must be int array
 	CityIDs   types.Int64Array            `boil:"city_id" json:"city_ids"`
 	City      []geo.CityModel             `boil:"-" json:"cities"`
@@ -50,8 +50,8 @@ type EventModel struct {
 	Status      string            `boil:"status_id" json:"status_id,omitempty" toml:"status" yaml:"status"`
 	HallID      types.StringArray `boil:"hall_id" json:"hall_id" toml:"hall_id" yaml:"hall_id"`
 	Fee         float64           `boil:"wage" json:"wage" `
-	State       types.StringArray `json:"state_id" toml:"state" yaml:"state"`
-	City        types.StringArray `json:"city_id" toml:"city" yaml:"city"`
+	State       types.Int64Array  `json:"state_id" toml:"state" yaml:"state"`
+	City        types.Int64Array  `json:"city_id" toml:"city" yaml:"city"`
 	Cover       string            `boil:"cover" json:"cover" toml:"cover" yaml:"cover"`
 	Poster      string            `boil:"poster" json:"poster" toml:"poster"`
 	Gallery     types.StringArray `boil:"gallery" json:"images" toml:"images" yaml:"images"`
@@ -60,12 +60,13 @@ type EventModel struct {
 
 type QueryEventModel struct {
 	ID       null.String       `json:"id"`
+	Slug     null.String       `json:"slug,omitempty"`
 	Name     null.String       `json:"name,omitempty"`
 	Type     null.String       `json:"type_id"`
 	Status   null.String       `json:"status_id,omitempty"`
 	Hall     types.StringArray `json:"hall_id"`
-	State    types.StringArray `json:"state_id"`
-	City     types.StringArray `json:"city_id"`
+	State    types.Int64Array  `json:"state_id"`
+	City     types.Int64Array  `json:"city_id"`
 	Category types.StringArray `json:"category_id"`
 	Crew     types.StringArray `json:"crew_id"`
 	MinScore null.Float64      `json:"min_score"`
