@@ -76,11 +76,11 @@ type QueryEventModel struct {
 }
 
 type ViewLanding struct {
-	Body []EventViewWidget `json:"body"`
+	Body []*EventViewWidget `json:"body"`
 }
 
 type EventViewWidget struct {
-	Type  string       `json:"type"`
-	Title string       `json:"title"`
-	Data  []EventModel `json:"data"`
+	Type  string      `json:"type"`
+	Title string      `json:"title"`
+	Data  interface{} `json:"data"`
 }
