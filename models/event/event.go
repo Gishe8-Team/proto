@@ -10,6 +10,7 @@ import (
 type ViewFullEventModel struct {
 	ID          string                 `boil:"id" json:"id" toml:"id" yaml:"id"`
 	Name        string                 `boil:"name" json:"name,omitempty" toml:"name" yaml:"name,omitempty"`
+	Slug        null.String            `boil:"slug" json:"slug,omitempty" toml:"slug" yaml:"slug,omitempty"`
 	Description null.String            `boil:"description" json:"description,omitempty" toml:"description" yaml:"description,omitempty"`
 	Score       float64                `boil:"score" json:"score,omitempty"`
 	Type        EventsTypeModel        `boil:",bind" json:"type" toml:"type" yaml:"type"`
@@ -34,6 +35,7 @@ type ViewFullEventModel struct {
 type ViewSmallEventModel struct {
 	ID          string            `boil:"id" json:"id" toml:"id" yaml:"id"`
 	Name        string            `boil:"name" json:"name,omitempty" toml:"name" yaml:"name,omitempty"`
+	Slug        null.String       `boil:"slug" json:"slug,omitempty" toml:"slug" yaml:"slug,omitempty"`
 	Description null.String       `boil:"description" json:"description,omitempty" toml:"description" yaml:"description,omitempty"`
 	Score       float64           `boil:"score" json:"score,omitempty"`
 	Type        EventsTypeModel   `boil:"type,bind" json:"type" toml:"type" yaml:"type"`
@@ -45,6 +47,7 @@ type ViewSmallEventModel struct {
 type EventModel struct {
 	ID          string            `boil:"id" json:"id" toml:"id" yaml:"id"`
 	Name        string            `boil:"name" json:"name,omitempty" toml:"name" yaml:"name,omitempty"`
+	Slug        null.String       `boil:"slug" json:"slug,omitempty" toml:"slug" yaml:"slug,omitempty"`
 	Description null.String       `boil:"description" json:"description,omitempty" toml:"description" yaml:"description,omitempty"`
 	Type        string            `boil:"type_id" json:"type_id" toml:"type" yaml:"type"`
 	Status      string            `boil:"status_id" json:"status_id,omitempty" toml:"status" yaml:"status"`
