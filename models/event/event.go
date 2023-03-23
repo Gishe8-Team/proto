@@ -83,7 +83,10 @@ type ViewLanding struct {
 }
 
 type EventViewWidget struct {
-	Type  string      `json:"type"`
-	Title string      `json:"title"`
-	Data  interface{} `json:"data"`
+	Type   string            `boil:"type" json:"type"`
+	Title  null.String       `boil:"title" json:"title"`
+	Values types.StringArray `boil:"values" json:"-"`
+	Table  string            `boil:"table" json:"-"`
+	Data   interface{}       `boil:"-" json:"data"`
+	Extra  null.JSON         `boil:"extradata" json:"extra"`
 }
