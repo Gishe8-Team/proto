@@ -42,6 +42,7 @@ type ViewSmallEventModel struct {
 	Status      EventsStatusModel `boil:"status,bind" json:"status,omitempty" toml:"status" yaml:"status"`
 	Cover       string            `boil:"cover" json:"cover" toml:"cover" yaml:"cover"`
 	Poster      string            `boil:"poster" json:"poster" toml:"poster"`
+	Category    []*CategoryModel  `boil:"-" json:"category"`
 }
 
 type EventModel struct {
