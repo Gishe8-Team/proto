@@ -1,15 +1,13 @@
 package services
 
 const (
-	UserLogin     = "2.1.1"
-	OTPLogin      = "2.1.2"
-	EditLogin     = "2.1.3"
-	CreateAccount = "2.1.4"
-	DeleteAccount = "2.1.5"
-	BanAccount    = "2.1.6"
-	UnbanAccount  = "2.1.7"
-	VerifyEmail   = "2.1.8"
-	VerifyMobile  = "2.1.9"
+	CreateAccount = "2.1.1"
+	EditAccount   = "2.1.2"
+	DeleteAccount = "2.1.3"
+	BanAccount    = "2.1.4"
+	UnbanAccount  = "2.1.5"
+	VerifyEmail   = "2.1.6"
+	VerifyMobile  = "2.1.7"
 )
 
 const (
@@ -28,6 +26,11 @@ const (
 )
 
 const (
-	AddLoginHistoryEntry    = "2.4.1"
-	ListLoginHistoryForUser = "2.4.2"
+	UserLogin = "2.4.1"
+	OTPLogin  = "2.4.2"
+)
+
+const (
+	AddLoginHistoryEntry    = "2.5.1"
+	ListLoginHistoryForUser = "2.5.2"
 )
