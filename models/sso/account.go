@@ -21,3 +21,7 @@ type LoginRequest struct {
 	Password string `json:"password"`
 	IsOTP    bool   `json:"is_otp"`
 }
+
+type LoginResponse struct {
+	Token []byte `json:"token"`
+}
