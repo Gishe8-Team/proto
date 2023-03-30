@@ -6,7 +6,7 @@ type CategoryModel struct {
 	ID     string      `boil:"id" json:"id" toml:"id" yaml:"id"`
 	Name   string      `boil:"name" json:"name" toml:"name" yaml:"name"`
 	Title  string      `boil:"title" json:"title" toml:"title" yaml:"title"`
-	Image  string      `boil:"image" json:"image"`
+	Image  null.String `boil:"image" json:"image"`
 	Parent null.String `boil:"parent" json:"parent,omitempty" toml:"parent" yaml:"parent,omitempty"`
 }
 
