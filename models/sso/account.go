@@ -6,7 +6,7 @@ type Account struct {
 	ID               string      `boil:"id" json:"id" toml:"id" yaml:"id"`
 	UserName         null.String `boil:"user_name" json:"user_name,omitempty" toml:"user_name" yaml:"user_name,omitempty"`
 	Password         null.String `boil:"password" json:"password,omitempty" toml:"password" yaml:"password,omitempty"`
-	GroupID          int         `boil:"group_id" json:"group_id" toml:"group_id" yaml:"group_id"`
+	GroupID          int16       `boil:"group_id" json:"group_id" toml:"group_id" yaml:"group_id"`
 	UserACL          string      `boil:"user_acl" json:"user_acl" toml:"user_acl" yaml:"user_acl"`
 	UserEmail        null.String `boil:"user_email" json:"user_email,omitempty" toml:"user_email" yaml:"user_email,omitempty"`
 	IsEmailVerified  null.Bool   `boil:"is_email_verified" json:"is_email_verified,omitempty" toml:"is_email_verified" yaml:"is_email_verified,omitempty"`
