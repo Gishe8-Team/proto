@@ -10,4 +10,4 @@ type LoginArchive struct {
 	Device    null.String `boil:"device" json:"device,omitempty" toml:"device" yaml:"device,omitempty"`
 }
 
-type LoginArchiveSlice *[]*LoginArchive
+type LoginArchiveSlice []*LoginArchive

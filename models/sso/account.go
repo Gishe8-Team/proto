@@ -18,7 +18,7 @@ type Account struct {
 	DeletedAt        null.Time   `boil:"deleted_at" json:"deleted_at,omitempty" toml:"deleted_at" yaml:"deleted_at,omitempty"`
 }
 
-type AccountSlice *[]*Account
+type AccountSlice []*Account
 
 type LoginRequest struct {
 	UserName string `json:"user_name"`

@@ -5,4 +5,4 @@ type AccessRoute struct {
 	Name string `boil:"name" json:"name,omitempty" toml:"name" yaml:"name,omitempty"`
 }
 
-type AccessRouteSlice *[]*AccessRoute
+type AccessRouteSlice []*AccessRoute
