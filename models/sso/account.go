@@ -12,6 +12,7 @@ type Account struct {
 	IsEmailVerified  null.Bool   `boil:"is_email_verified" json:"is_email_verified,omitempty" toml:"is_email_verified" yaml:"is_email_verified,omitempty"`
 	UserMobile       null.String `boil:"user_mobile" json:"user_mobile,omitempty" toml:"user_mobile" yaml:"user_mobile,omitempty"`
 	IsMobileVerified null.Bool   `boil:"is_mobile_verified" json:"is_mobile_verified,omitempty" toml:"is_mobile_verified" yaml:"is_mobile_verified,omitempty"`
+	AccountBanned    null.Bool   `boil:"account_banned" json:"account_banned,omitempty" toml:"account_banned" yaml:"account_banned,omitempty"`
 	CreatedAt        null.Time   `boil:"created_at" json:"created_at,omitempty" toml:"created_at" yaml:"created_at,omitempty"`
 	UpdatedAt        null.Time   `boil:"updated_at" json:"updated_at,omitempty" toml:"updated_at" yaml:"updated_at,omitempty"`
 	DeletedAt        null.Time   `boil:"deleted_at" json:"deleted_at,omitempty" toml:"deleted_at" yaml:"deleted_at,omitempty"`
