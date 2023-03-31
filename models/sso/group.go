@@ -6,4 +6,4 @@ type Group struct {
 	ACL  string `boil:"acl" json:"acl" toml:"acl" yaml:"acl"`
 }
 
-type GroupSlice []Group
+type GroupSlice *[]*Group
