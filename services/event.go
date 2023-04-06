@@ -37,11 +37,12 @@ const (
 )
 
 const (
-	AddCrew      = "6.6.1"
-	EditCrew     = "6.6.2"
-	DeleteCrew   = "6.6.3"
-	FindCrews    = "6.6.4"
-	FindCrewByID = "6.6.5"
+	AddCrew         = "6.6.1"
+	EditCrew        = "6.6.2"
+	DeleteCrew      = "6.6.3"
+	FindCrews       = "6.6.4"
+	FindCrewByID    = "6.6.5"
+	FindEventBySlug = "6.6.6"
 )
 
 const (
