@@ -17,11 +17,27 @@ type Account struct {
 type AccountSlice []Account
 
 type LoginRequest struct {
-	UserName string `json:"user_name"`
+	Account  string `json:"account"`
 	Password string `json:"password"`
 	IsOTP    bool   `json:"is_otp"`
 }
 
 type LoginResponse struct {
 	Token []byte `json:"token"`
+}
+
+type VerifyEmailRequest struct {
+	Email string `json:"email"`
+}
+
+type CheckEmailVerification struct {
+	VerifyCode string `json:"verify_code"`
+}
+
+type VerifyMobileRequest struct {
+	Mobile string `json:"mobile"`
+}
+
+type CheckMobileVerification struct {
+	VerifyCode string `json:"verify_code"`
 }
