@@ -21,6 +21,7 @@ type SMSArchiveRequest struct {
 }
 
 type SMSArchive struct {
+	ID           int64  `json:"id,omitempty" boil:"id"`
 	MobileNum    string `json:"mobile_num" boil:"mobile_num"`
 	Message      string `json:"message" boil:"message"`
 	WhichService string `json:"which_service" boil:"which_service"`
@@ -29,6 +30,7 @@ type SMSArchive struct {
 type SMSArchiveSlice []*SMSArchive
 
 type EmailArchiveRequest struct {
+	ID           int64  `json:"id" boil:"id"`
 	EmailAddress string `json:"email_address,omitempty"`
 	Service      string `json:"service,omitempty"`
 	Limit        int    `json:"limit,omitempty"`
