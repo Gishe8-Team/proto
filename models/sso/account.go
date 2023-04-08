@@ -35,6 +35,8 @@ type VerifyEmailRequest struct {
 }
 
 type CheckEmailVerification struct {
+	UserID     string `json:"user_id,omitempty"`
+	Email      string `json:"email"`
 	VerifyCode string `json:"verify_code"`
 }
 
@@ -43,5 +45,7 @@ type VerifyMobileRequest struct {
 }
 
 type CheckMobileVerification struct {
+	UserID     string `json:"user_id,omitempty"`
+	Mobile     string `json:"mobile"`
 	VerifyCode string `json:"verify_code"`
 }
