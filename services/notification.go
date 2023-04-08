@@ -17,3 +17,13 @@ const (
 	SendPushNotification = "15.3.1"
 	SendWebNotification  = "15.3.2"
 )
+
+const (
+	ListSMSArchive          = "15.4.1"
+	FindSMSArchiveByMobile  = "15.4.2"
+	FindSMSArchiveByService = "15.4.3"
+
+	ListEmailArchive               = "15.4.4"
+	FindEmailArchiveByEmailAddress = "15.4.5"
+	FindEmailArchiveByService      = "15.4.6"
+)
