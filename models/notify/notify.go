@@ -13,11 +13,25 @@ type EmailModel struct {
 	Service        string   `json:"service,omitempty"`
 }
 
+type SMSArchiveRequest struct {
+	UserID       string `json:"user_id,omitempty"`
+	MobileNumber string `json:"mobile_number,omitempty"`
+	Limit        int    `json:"limit,omitempty"`
+	Offset       int    `json:"offset,omitempty"`
+}
+
 type SMSArchiveSlice struct {
 	ID           string `json:"id" boil:"id"`
 	MobileNum    string `json:"mobile_num" boil:"mobile_num"`
 	Message      string `json:"message" boil:"message"`
 	WhichService string `json:"which_service" boil:"which_service"`
+}
+
+type EmailArchiveRequest struct {
+	UserID       string `json:"user_id,omitempty"`
+	EmailAddress string `json:"email_address,omitempty"`
+	Limit        int    `json:"limit,omitempty"`
+	Offset       int    `json:"offset,omitempty"`
 }
 
 type EmailArchiveSlice struct {
