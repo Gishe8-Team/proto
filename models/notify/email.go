@@ -1,10 +1,12 @@
 package notify
 
+import "github.com/volatiletech/null/v8"
+
 type EmailModel struct {
-	Message        string `json:"message" boil:"email_message"`
-	Subject        string `json:"subject" boil:"email_subject"`
-	EmailAddresses string `json:"email_addresses" boil:"email_address"`
-	Service        string `json:"service,omitempty" boil:"which_service"`
+	EmailAddress string      `boil:"email_address" json:"email_address" toml:"email_address" yaml:"email_address"`
+	EmailMessage string      `boil:"email_message" json:"email_message" toml:"email_message" yaml:"email_message"`
+	WhichService string      `boil:"which_service" json:"which_service" toml:"which_service" yaml:"which_service"`
+	EmailSubject null.String `boil:"email_subject" json:"email_subject,omitempty" toml:"email_subject" yaml:"email_subject,omitempty"`
 }
 
 type CodeEmailModel struct {

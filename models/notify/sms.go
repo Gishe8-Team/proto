@@ -1,9 +1,9 @@
 package notify
 
 type SmsModel struct {
-	MessagesText  string `json:"messages_text" boil:"message"`
-	MobileNumbers string `json:"mobile_numbers" boil:"mobile_num"`
-	Service       string `json:"service,omitempty" boil:"which_service"`
+	MobileNum    string `boil:"mobile_num" json:"mobile_num" toml:"mobile_num" yaml:"mobile_num"`
+	Message      string `boil:"message" json:"message" toml:"message" yaml:"message"`
+	WhichService string `boil:"which_service" json:"which_service" toml:"which_service" yaml:"which_service"`
 }
 
 type CodeSmsModel struct {
