@@ -12,8 +12,8 @@ type Claims struct {
 }
 type LoginToken struct {
 	Claims
-	UserID string   `json:"user_id"`
-	ACL    []string `json:"acl"`
+	UserID string `json:"user_id"`
+	ACL    string `json:"acl"`
 }
 
 type CodeToken struct {
