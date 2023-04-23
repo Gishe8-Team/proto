@@ -18,6 +18,7 @@ type LoginToken struct {
 
 type CodeToken struct {
 	Claims
+	UserID string `json:"user_id"`
 	Mobile string `json:"mobile,omitempty"`
 	Email  string `json:"email,omitempty"`
 }
