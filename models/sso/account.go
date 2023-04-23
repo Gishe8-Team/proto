@@ -27,7 +27,7 @@ type LoginRequest struct {
 }
 
 type LoginResponse struct {
-	Token []byte `json:"token"`
+	Token string `json:"token"`
 }
 
 type VerifyEmailRequest struct {
