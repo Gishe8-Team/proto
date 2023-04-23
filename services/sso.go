@@ -22,6 +22,7 @@ const (
 const (
 	LoginWithPassword = "2.3.1"
 	LoginWithOTP      = "2.3.2"
+	CheckOTP          = "2.3.3"
 )
 
 const (
