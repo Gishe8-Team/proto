@@ -21,13 +21,13 @@ type Seat struct {
 }
 
 type PriceGroup struct {
-	ID    string  `json:"id"`
+	ID    int     `json:"id"`
 	Name  string  `json:"name"`
 	Price float64 `json:"price"`
 }
 
 type SeatType struct {
-	ID   string `json:"id"`
+	ID   int    `json:"id"`
 	Name string `json:"name"`
 }
 
