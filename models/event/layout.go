@@ -13,10 +13,10 @@ type Seat struct {
 	SeatID     string  `json:"seat_id"`
 	SeatNumber int     `json:"seat_number"`
 	Zone       string  `json:"zone"`
-	Row        int     `json:"row"`
+	Row        int8    `json:"row"`
 	Status     TStatus `json:"status"`
-	PriceGroup string  `json:"price_group"`
-	SeatType   string  `json:"seat_type"`
+	PriceGroup int8    `json:"price_group"`
+	SeatType   int8    `json:"seat_type"`
 	UserID     string  `json:"user_id"`
 }
 
