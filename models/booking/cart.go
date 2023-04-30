@@ -14,13 +14,6 @@ type ResponseViewCartModel struct {
 	Meta
 }
 
-// ToggleCartModel this is the message that ws ms sends to booking when a seat is clicked on client
-type ToggleCartModel struct {
-	TimeslotID string `json:"timeslot_id"`
-	Hash       string `json:"hash"`
-	SeatID     string `json:"seat_id"`
-}
-
 // FinalizeCartModel represents the data required to finalize a customer's cart.
 type FinalizeCartModel struct {
 	TimeslotID string `json:"timeslot_id"` // The ID of the timeslot selected by the customer.
