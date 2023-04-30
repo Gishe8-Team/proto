@@ -21,6 +21,8 @@ type Factor struct {
 	DOPS string `json:"dops"`
 	//description of factor
 	Description string `json:"description"`
+	// this should contain userID, CartID ,EventID and more data that needed
+	Data map[string]interface{} `json:"data"`
 }
 
 type InvoiceDescription struct {
