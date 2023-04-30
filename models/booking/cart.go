@@ -21,11 +21,11 @@ type ToggleCartModel struct {
 	SeatID     string `json:"seat_id"`
 }
 
-// FinalizeCartModel this is the request that client sends when done with booking
+// FinalizeCartModel represents the data required to finalize a customer's cart.
 type FinalizeCartModel struct {
-	TimeslotID string `json:"timeslot_id"`
-	UserID     string `json:"user_id"`
-	Coupon     string `json:"coupon"`
+	TimeslotID string `json:"timeslot_id"` // The ID of the timeslot selected by the customer.
+	UserID     string `json:"user_id"`     // The ID of the user who owns the cart.
+	Coupon     string `json:"coupon"`      // An optional coupon code to apply to the cart.
 }
 
 type Cart struct {
