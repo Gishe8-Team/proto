@@ -14,8 +14,7 @@ type Seat struct {
 	SeatNumber int     `json:"seat_number"`
 	X          int     `json:"x"`
 	Y          int     `json:"y"`
-	ZoneID     string  `json:"zone_id"`
-	Zone       string  `json:"zone"`
+	ZoneID     int8    `json:"zone_id"`
 	Row        int8    `json:"row"`
 	Status     TStatus `json:"status"`
 	PriceGroup int8    `json:"price_group"`
@@ -24,9 +23,10 @@ type Seat struct {
 }
 
 type PriceGroup struct {
-	ID    int     `json:"id"`
-	Name  string  `json:"name"`
-	Price float64 `json:"price"`
+	ID        int     `json:"id"`
+	Name      string  `json:"name"`
+	Price     float64 `json:"price"`
+	SeatCount int     `json:"seat_count"`
 }
 
 type SeatType struct {

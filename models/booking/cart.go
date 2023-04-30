@@ -14,6 +14,15 @@ type ResponseViewCartModel struct {
 	Meta
 }
 
+type RequestBookingNoLayout struct {
+	Hash  string `json:"hash,omitempty"`
+	Seats []struct {
+		ZoneID       int `json:"zone_id"`
+		PriceGroupID int `json:"price_group_id"`
+		Count        int `json:"count"`
+	}
+}
+
 // FinalizeCartModel represents the data required to finalize a customer's cart.
 type FinalizeCartModel struct {
 	TimeslotID string `json:"timeslot_id"` // The ID of the timeslot selected by the customer.
