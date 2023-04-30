@@ -2,8 +2,13 @@ package booking
 
 import "github.com/Gishe8-Team/proto/models/event"
 
+type RequestViewCartModel struct {
+	TimeslotID string `json:"timeslot_id"`
+	UserID     string `json:"user_id"`
+}
+
 // ViewCartModel this is the response to state one of booking
-type ViewCartModel struct {
+type ResponseViewCartModel struct {
 	Cart
 	OldCart Cart `json:"oldCart,omitempty"`
 	Meta
