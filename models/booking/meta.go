@@ -17,6 +17,5 @@ type Meta struct {
 	IsActive    bool                      `json:"is_active"`
 	PriceGroups []event.PriceGroup        `json:"price_groups"`
 	SeatTypes   []event.SeatType          `json:"seat_types"`
-	Seats       []event.Seat              `json:"seats,omitempty"`
 	Layouts     []event.Layout            `json:"layouts"`
 }

@@ -1,8 +1,11 @@
 package booking
 
+import "github.com/Gishe8-Team/proto/models/event"
+
 // this is the message that events sends when cron job runs and booking is started
 type InitBooking struct {
 	Meta
+	Seats []event.Seat `json:"seats,omitempty"`
 }
 
 type BookingEvent int
