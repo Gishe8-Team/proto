@@ -26,7 +26,7 @@ type PriceGroup struct {
 	ID        int     `json:"id"`
 	Name      string  `json:"name"`
 	Price     float64 `json:"price"`
-	SeatCount int     `json:"seat_count"`
+	SeatCount int     `json:"seat_count,omitempty"`
 }
 
 type SeatType struct {

@@ -7,11 +7,19 @@ type RequestViewCartModel struct {
 	UserID     string `json:"user_id"`
 }
 
-// ResponseViewCartModel this is the response to state one of booking
-type ResponseViewCartModel struct {
+// ResponseViewCartModelLayout this is the response to state one of booking
+type ResponseViewCartModelLayout struct {
 	Cart
 	OldCart Cart `json:"oldCart,omitempty"`
 	Meta
+}
+
+type ResponseViewCartModelNoLayout struct {
+	Meta
+	Rows []struct {
+		ZoneID int `json:"zone_id"`
+		event.PriceGroup
+	}
 }
 
 type RequestBookingNoLayout struct {
