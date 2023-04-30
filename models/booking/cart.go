@@ -7,7 +7,7 @@ type RequestViewCartModel struct {
 	UserID     string `json:"user_id"`
 }
 
-// ViewCartModel this is the response to state one of booking
+// ResponseViewCartModel this is the response to state one of booking
 type ResponseViewCartModel struct {
 	Cart
 	OldCart Cart `json:"oldCart,omitempty"`
