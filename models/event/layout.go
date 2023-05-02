@@ -1,25 +1,25 @@
 package event
 
-type TStatus int
+type SeatStatus int8
 
 const (
-	Free TStatus = iota + 1
-	Blocked
-	Reserved
-	Booked
+	SeatFree SeatStatus = iota + 1
+	SeatBlocked
+	SeatReserved
+	SeatBooked
 )
 
 type Seat struct {
-	SeatID     string  `json:"seat_id"`
-	SeatNumber int     `json:"seat_number"`
-	X          int     `json:"x"`
-	Y          int     `json:"y"`
-	ZoneID     int8    `json:"zone_id"`
-	Row        int8    `json:"row"`
-	Status     TStatus `json:"status"`
-	PriceGroup int8    `json:"price_group"`
-	SeatType   int8    `json:"seat_type"`
-	UserID     string  `json:"user_id"`
+	SeatID     string     `json:"seat_id"`
+	SeatNumber int        `json:"seat_number"`
+	X          int        `json:"x"`
+	Y          int        `json:"y"`
+	ZoneID     int8       `json:"zone_id"`
+	Row        int8       `json:"row"`
+	Status     SeatStatus `json:"status"`
+	PriceGroup int8       `json:"price_group"`
+	SeatType   int8       `json:"seat_type"`
+	UserID     string     `json:"user_id"`
 }
 
 type PriceGroup struct {
