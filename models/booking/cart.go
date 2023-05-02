@@ -43,6 +43,6 @@ type Cart struct {
 	TimeSlotID string       `json:"time_slot_id,omitempty"`
 	Hash       string       `json:"hash,omitempty"`
 	IdleTime   int64        `json:"idle_time,omitempty"` // TTL Cart it should create on returning timeslot meta
-	Status     string       `json:"status"`              // Status of cart {open, pending, paid}
+	Status     CartStatus   `json:"status"`              // Status of cart {open, pending, paid}
 	Seats      []event.Seat `json:"seats"`
 }
