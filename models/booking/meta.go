@@ -14,7 +14,7 @@ type Meta struct {
 	EndTime     time.Time                 `json:"end_time"`
 	Event       event.ViewSmallEventModel `json:"event"`
 	Hall        complex2.HallModel        `json:"hall"`
-	IsActive    bool                      `json:"is_active"`
+	Status      TimeSlotStatus            `json:"status"`
 	Background  string                    `json:"background"`
 	PriceGroups []event.PriceGroup        `json:"price_groups"`
 	SeatTypes   []event.SeatType          `json:"seat_types"`
