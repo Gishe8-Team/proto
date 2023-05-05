@@ -10,8 +10,9 @@ type RequestViewCartModel struct {
 // ResponseViewCartModelLayout this is the response to state one of booking
 type ResponseViewCartModelLayout struct {
 	Cart
-	OldCart Cart `json:"oldCart,omitempty"`
-	Meta
+	OldCart Cart         `json:"oldCart,omitempty"`
+	Meta                 // Status of cart {open, pending, paid}
+	Seats   []event.Seat `json:"seats"`
 }
 
 type ResponseViewCartModelNoLayout struct {
