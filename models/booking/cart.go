@@ -17,9 +17,14 @@ type ResponseViewCartModelLayout struct {
 type ResponseViewCartModelNoLayout struct {
 	Meta
 	Zones []struct {
-		ZoneID int `json:"zone_id"`
-		event.PriceGroup
+		ZoneID int      `json:"zone_id"`
+		Prices []Prices `json:"prices"`
 	} `json:"zones"`
+}
+
+type Prices struct {
+	event.PriceGroup
+	FreeSeats int `json:"free-seats"`
 }
 
 type RequestBookingNoLayout struct {

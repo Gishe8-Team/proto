@@ -10,3 +10,5 @@ const (
 	CartFindByHash = "8.2.1"
 	CartFinalizing = "8.2.2"
 )
+
+const ()
