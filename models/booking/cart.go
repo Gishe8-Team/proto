@@ -16,7 +16,7 @@ type ResponseViewCartModelLayout struct {
 }
 
 type ResponseViewCartModelNoLayout struct {
-	Cart
+	Cart Cart `json:"cart"`
 	Meta
 	Zones []struct {
 		ZoneID int      `json:"zone_id"`
