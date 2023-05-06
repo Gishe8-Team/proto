@@ -29,20 +29,21 @@ type Prices struct {
 	FreeSeats int `json:"free-seats"`
 }
 
-type RequestBookingNoLayout struct {
-	Hash  string `json:"hash,omitempty"`
+type FinalizeCartModelNoLayout struct {
 	Seats []struct {
 		ZoneID       int `json:"zone_id"`
 		PriceGroupID int `json:"price_group_id"`
 		Count        int `json:"count"`
-	}
+	} `json:"seats,omitempty"`
 }
 
 // FinalizeCartModel represents the data required to finalize a customer's cart.
-type FinalizeCartModel struct {
-	TimeslotID string `json:"timeslot_id"` // The ID of the timeslot selected by the customer.
-	UserID     string `json:"user_id"`     // The ID of the user who owns the cart.
-	Coupon     string `json:"coupon"`      // An optional coupon code to apply to the cart.
+type RequestFinalizeCartModel struct {
+	TimeslotID                string `json:"timeslot_id"` // The ID of the timeslot selected by the customer.
+	UserID                    string `json:"user_id"`     // The ID of the user who owns the cart.
+	Hash                      string `json:"hash"`
+	Coupon                    string `json:"coupon"` // An optional coupon code to apply to the cart.
+	FinalizeCartModelNoLayout        // if seats exist then add seats per price group (no layout selection)
 }
 
 type Cart struct {

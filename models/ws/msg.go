@@ -1,5 +1,12 @@
 package ws
 
+type WsEvent struct {
+	UserID    string
+	ChannelID string
+	Event     string `json:"event"`
+	Data      []byte
+}
+
 // BookSeatMsg request message for booking a seat for particular timeslot.
 type BookSeatMsg struct {
 	TimeslotID string `json:"timeslot_id"` // ID of the timeslot being booked
