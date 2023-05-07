@@ -16,4 +16,5 @@ const (
 	RKPayment  = "payment"
 	RKNotify   = "notify"
 	RKMetric   = "metric"
+	RKWs       = "ws"
 )

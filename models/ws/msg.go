@@ -1,5 +1,20 @@
 package ws
 
+// WsBroadcast used for sending message to channels
+type WsBroadcast struct {
+	ChannelID string `json:"channel_id"`
+
+	Data []byte `json:"data"`
+}
+
+// this used to sned ws events to rmq
+type WsEvent struct {
+	UserID    string
+	ChannelID string
+	Event     string `json:"event"`
+	Data      []byte
+}
+
 // BookSeatMsg request message for booking a seat for particular timeslot.
 type BookSeatMsg struct {
 	TimeslotID string `json:"timeslot_id"` // ID of the timeslot being booked
