@@ -24,6 +24,15 @@ type ResponseViewCartModelNoLayout struct {
 	} `json:"zones"`
 }
 
+type RequestBookingNoLayout struct {
+	Hash                      string `json:"hash"`	      // The Hash of the user cart.
+	Seats []struct {
+		ZoneID       	int `json:"zone_id"`
+		PriceGroupID 	int `json:"price_group_id"`
+		Count        	int `json:"count"`
+	} `json:"seats"`
+}
+	
 type Prices struct {
 	event.PriceGroup
 	FreeSeats int `json:"free-seats"`
