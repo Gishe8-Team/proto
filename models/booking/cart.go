@@ -30,8 +30,9 @@ type Prices struct {
 }
 
 type RequestBookingNoLayout struct {
-	Hash  string `json:"hash,omitempty"`
-	Seats []struct {
+	TimeslotID string `json:"timeslot_id"`
+	Hash       string `json:"hash,omitempty"`
+	Seats      []struct {
 		ZoneID       int `json:"zone_id"`
 		PriceGroupID int `json:"price_group_id"`
 		Count        int `json:"count"`
