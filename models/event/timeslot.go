@@ -7,6 +7,7 @@ import (
 
 type TimeslotModel struct {
 	ID            string       `boil:"ts_id" json:"id" toml:"id" yaml:"id"`
+	Hash          string       `json:"hash" boil:"ts_hash"`
 	Name          string       `boil:"ts_name" json:"name"`
 	Description   string       `boil:"ts_description" json:"description"`
 	PriceGroup    []PriceGroup `json:"price_group"`
@@ -20,6 +21,8 @@ type TimeslotModel struct {
 	EndTime       time.Time    `boil:"ts_end_time" json:"end_time" toml:"end_time" yaml:"end_time"`
 	Tnos          int          `boil:"ts_tnos" json:"tnos" toml:"tnos" yaml:"tnos"`
 	Fnos          int          `boil:"ts_fnos" json:"fnos" toml:"fnos" yaml:"fnos"`
+	BookingMode   int          `boil:"ts_booking_mode" json:"booking_mode"`
+	Status        int          `boil:"ts_status" json:"status"`
 	Public        bool         `boil:"ts_public" json:"public" toml:"public" yaml:"public"`
 	CreatedAt     time.Time    `boil:"ts_created_at" json:"created_at" toml:"created_at" yaml:"created_at"`
 }
