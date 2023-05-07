@@ -1,5 +1,13 @@
 package ws
 
+// WsBroadcast used for sending message to channels
+type Broadcast struct {
+	ChannelID string `json:"channel_id"`
+
+	Data []byte `json:"data"`
+}
+
+// this used to sned ws events to rmq
 type WsEvent struct {
 	UserID    string
 	ChannelID string
