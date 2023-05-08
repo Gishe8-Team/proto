@@ -19,20 +19,24 @@ type ResponseViewCartModelNoLayout struct {
 	Cart Cart `json:"cart"`
 	Meta
 	Zones []struct {
-		ZoneID int      `json:"zone_id"`
-		Prices []Prices `json:"prices"`
+		ZoneID    int      `json:"zone_id"`
+		Prices    []Prices `json:"prices"`
+		SeatCount int      `json:"seat_count"`
 	} `json:"zones"`
 }
 
 type RequestBookingNoLayout struct {
-	Hash                      string `json:"hash"`	      // The Hash of the user cart.
-	Seats []struct {
-		ZoneID       	int `json:"zone_id"`
-		PriceGroupID 	int `json:"price_group_id"`
-		Count        	int `json:"count"`
-	} `json:"seats"`
+	TimeslotID string                 `json:"timeslot_id"`
+	Hash       string                 `json:"hash"` // The Hash of the user cart.
+	Seats      []RequestNoLayoutSeats `json:"seats"`
 }
-	
+
+type RequestNoLayoutSeats struct {
+	ZoneID       int `json:"zone_id"`
+	PriceGroupID int `json:"price_group_id"`
+	Count        int `json:"count"`
+}
+
 type Prices struct {
 	event.PriceGroup
 	FreeSeats int `json:"free-seats"`
