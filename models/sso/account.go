@@ -2,6 +2,14 @@ package sso
 
 import "github.com/volatiletech/null/v8"
 
+// CreateAccountRequest to unmarshal request at gateway
+type CreateAccountRequest struct {
+	UserName   null.String `boil:"user_name" json:"user_name,omitempty" toml:"user_name" yaml:"user_name,omitempty"`
+	Password   null.String `boil:"password" json:"password,omitempty" toml:"password" yaml:"password,omitempty"`
+	UserEmail  null.String `boil:"user_email" json:"user_email,omitempty" toml:"user_email" yaml:"user_email,omitempty"`
+	UserMobile null.String `boil:"user_mobile" json:"user_mobile,omitempty" toml:"user_mobile" yaml:"user_mobile,omitempty"`
+}
+
 type Account struct {
 	ID               string      `boil:"id" json:"id" toml:"id" yaml:"id"`
 	UserName         null.String `boil:"user_name" json:"user_name,omitempty" toml:"user_name" yaml:"user_name,omitempty"`
