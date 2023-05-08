@@ -28,3 +28,7 @@ const (
 const (
 	FillEventComplexData = "12.10.1"
 )
+
+const (
+	FIllBookingMetaData = "12.99.1"
+)

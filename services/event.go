@@ -50,3 +50,7 @@ const (
 	EditCrewRole   = "6.7.2"
 	DeleteCrewRole = "6.7.3"
 )
+
+const (
+	SendInitBooking = "6.99.1"
+)
