@@ -18,10 +18,12 @@ type ResponseViewCartModelLayout struct {
 type ResponseViewCartModelNoLayout struct {
 	Cart Cart `json:"cart"`
 	Meta
-	Zones []struct {
-		ZoneID int      `json:"zone_id"`
-		Prices []Prices `json:"prices"`
-	} `json:"zones"`
+	Zones []ZoneModel `json:"zones"`
+}
+
+type ZoneModel struct {
+	ZoneID int      `json:"zone_id"`
+	Prices []Prices `json:"prices"`
 }
 
 type Prices struct {
