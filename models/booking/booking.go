@@ -2,7 +2,7 @@ package booking
 
 import "github.com/Gishe8-Team/proto/models/event"
 
-// InitBooking this is the message that events sends when cron job runs and booking is started
+// CreateBookingSlot this is the message that events sends when cron job runs and booking is started
 type CreateBookingSlot struct {
 	Meta
 	Seats []event.Seat `json:"seats,omitempty"`

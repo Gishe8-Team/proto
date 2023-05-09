@@ -2,36 +2,40 @@ package booking
 
 import "github.com/Gishe8-Team/proto/models/event"
 
+// RequestViewCartModel this request in step 1 of booking
 type RequestViewCartModel struct {
 	TimeslotID string `json:"timeslot_id"`
 	UserID     string `json:"user_id"`
 }
 
-// ResponseViewCartModelLayout this is the response to state one of booking
+// ResponseViewCartModelLayout this is the response to step 1 of booking if booking have layout
 type ResponseViewCartModelLayout struct {
-	Cart    Cart         `json:"cart"`
-	OldCart Cart         `json:"old_cart,omitempty"`
+	Cart    CartModel    `json:"cart"`
+	OldCart CartModel    `json:"old_cart,omitempty"`
 	Meta                 // Status of cart {open, pending, paid}
 	Seats   []event.Seat `json:"seats"`
 }
 
+// ResponseViewCartModelNoLayout this is the response to step 1 of booking if booking havent layout
 type ResponseViewCartModelNoLayout struct {
-	Cart Cart `json:"cart"`
+	Cart CartModel `json:"cart"`
 	Meta
 	Zones []ZoneModel `json:"zones"`
 }
 
+// ZoneModel composite to above struct
 type ZoneModel struct {
 	ZoneID int      `json:"zone_id"`
 	Prices []Prices `json:"prices"`
 }
 
+// Prices composite to above struct
 type Prices struct {
 	event.PriceGroup
 	FreeSeats int `json:"free-seats"`
 }
 
-// FinalizeCartModel represents the data required to finalize a customer's cart.
+// RequestFinalizeCartModel represents the data required to finalize a customer's cart.
 type RequestFinalizeCartModel struct {
 	TimeslotID string          `json:"timeslot_id"` // The ID of the timeslot selected by the customer.
 	UserID     string          `json:"user_id"`     // The ID of the user who owns the cart.
@@ -40,13 +44,15 @@ type RequestFinalizeCartModel struct {
 	Seats      []NoLayoutSeats `json:"seats,omitempty"` // if seats exist then add seats per price group (no layout selection)
 }
 
+// NoLayoutSeats composite in above struct
 type NoLayoutSeats struct {
 	ZoneID       int `json:"zone_id"`
 	PriceGroupID int `json:"price_group_id"`
 	Count        int `json:"count"`
 }
 
-type Cart struct {
+// CartModel define model of cart
+type CartModel struct {
 	UserID     string       `json:"user_id,omitempty"`
 	TimeSlotID string       `json:"time_slot_id,omitempty"`
 	Hash       string       `json:"hash,omitempty"`
