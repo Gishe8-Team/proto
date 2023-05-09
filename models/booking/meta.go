@@ -17,6 +17,7 @@ type Meta struct {
 	Status      TimeslotStatus            `json:"status"`
 	Background  string                    `json:"background"`
 	PriceGroups []event.PriceGroup        `json:"price_groups"`
+	BookingMode int                       `json:"booking_mode"`
 	SeatTypes   []event.SeatType          `json:"seat_types"`
 	Layouts     []event.Layout            `json:"layouts"`
 }
