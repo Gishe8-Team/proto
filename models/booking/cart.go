@@ -10,10 +10,10 @@ type RequestViewCartModel struct {
 
 // ResponseViewCartModelLayout this is the response to step 1 of booking if booking have layout
 type ResponseViewCartModelLayout struct {
-	Cart    CartModel    `json:"cart"`
-	OldCart CartModel    `json:"old_cart,omitempty"`
-	Meta                 // Status of cart {open, pending, paid}
-	Seats   []event.Seat `json:"seats"`
+	Cart     CartModel    `json:"cart"`
+	OldCarts []CartModel  `json:"old_cart,omitempty"`
+	Meta                  // Status of cart {open, pending, paid}
+	Seats    []event.Seat `json:"seats"`
 }
 
 // ResponseViewCartModelNoLayout this is the response to step 1 of booking if booking havent layout
