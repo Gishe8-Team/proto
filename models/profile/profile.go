@@ -10,7 +10,6 @@ type Profile struct {
 	WalletID      uuid.UUID   `boil:"wallet_id" json:"wallet_id"`
 	ClubID        null.String `boil:"club_id" json:"club_id,omitempty"`
 	IsClubAdmin   null.Bool   `boil:"is_club_admin" json:"is_club_admin,omitempty"`
-	UserID        uuid.UUID   `boil:"user_id" json:"user_id"`
 	FirstName     string      `boil:"first_name" json:"first_name"`
 	LastName      string      `boil:"last_name" json:"last_name"`
 	OstanID       int         `boil:"ostan_id" json:"ostan_id"`
