@@ -16,7 +16,7 @@ type ResponseViewCartModelLayout struct {
 	Seats    []event.Seat `json:"seats"`
 }
 
-// ResponseViewCartModelNoLayout this is the response to step 1 of booking if booking havent layout
+// ResponseViewCartModelNoLayout this is the response to step 1 of booking if booking haven't layout
 type ResponseViewCartModelNoLayout struct {
 	Cart CartModel `json:"cart"`
 	Meta
@@ -33,6 +33,21 @@ type ZoneModel struct {
 type Prices struct {
 	event.PriceGroup
 	FreeSeats int `json:"free-seats"`
+}
+
+// RequestToggleSeat income from WebSocket Gateway and request do a seat of desired timeslot
+// reserve/unreserved  to/from a cart
+type RequestToggleSeat struct {
+	TimeslotID string `json:"timeslot_id"` // The ID of the timeslot selected by the customer.
+	Hash       string `json:"hash"`
+	SeatID     string `json:"seat_id"`
+}
+
+// ResponseToggleSeat publish to all users subscribed in timeslot channel
+type ResponseToggleSeat struct {
+	TimeslotID string `json:"timeslot_id"` // The ID of the timeslot selected by the customer.
+	Hash       string `json:"hash"`
+	SeatID     string `json:"seat_id"`
 }
 
 // RequestFinalizeCartModel represents the data required to finalize a customer's cart.
