@@ -6,6 +6,13 @@ import (
 	"time"
 )
 
+type BookingMode int
+
+const (
+	Layout BookingMode = iota + 1
+	NoLayout
+)
+
 type Meta struct {
 	TimeSlotID  string                    `json:"time_slot_id"`
 	Name        string                    `json:"name"`
@@ -17,7 +24,7 @@ type Meta struct {
 	Status      TimeslotStatus            `json:"status"`
 	Background  string                    `json:"background"`
 	PriceGroups []event.PriceGroup        `json:"price_groups"`
-	BookingMode int                       `json:"booking_mode"`
+	BookingMode BookingMode               `json:"booking_mode"`
 	SeatTypes   []event.SeatType          `json:"seat_types"`
 	Layouts     []event.Layout            `json:"layouts"`
 }
