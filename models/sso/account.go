@@ -53,7 +53,7 @@ type VerifyMobileRequest struct {
 }
 
 type CheckMobileVerification struct {
-	UserID     string `json:"user_id,omitempty"`
+	CodeToken  string `json:"code_token,omitempty"`
 	Mobile     string `json:"mobile"`
 	VerifyCode string `json:"verify_code"`
 }
