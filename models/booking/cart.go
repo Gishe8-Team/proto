@@ -51,7 +51,7 @@ type ResponseToggleSeat struct {
 }
 
 // RequestFinalizeCartModel represents the data required to finalize a customer's cart.
-type RequestFinalizeCartModel struct {
+type RequestSubmitCartModel struct {
 	TimeslotID string          `json:"timeslot_id"` // The ID of the timeslot selected by the customer.
 	UserID     string          `json:"user_id"`     // The ID of the user who owns the cart.
 	Hash       string          `json:"hash"`
