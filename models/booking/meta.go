@@ -6,13 +6,6 @@ import (
 	"time"
 )
 
-type BookingMode int
-
-const (
-	Layout BookingMode = iota + 1
-	NoLayout
-)
-
 type Meta struct {
 	TimeSlotID  string                    `json:"time_slot_id"`
 	Name        string                    `json:"name,omitempty"`
@@ -21,10 +14,10 @@ type Meta struct {
 	EndTime     time.Time                 `json:"end_time,omitempty"`
 	Event       event.ViewSmallEventModel `json:"event,omitempty"`
 	Hall        complex2.HallModel        `json:"hall,omitempty"`
-	Status      TimeSlotStatus            `json:"status,omitempty"`
+	Status      event.TimeSlotStatus      `json:"status,omitempty"`
 	Background  string                    `json:"background,omitempty"`
 	PriceGroups []event.PriceGroup        `json:"price_groups,omitempty"`
-	BookingMode BookingMode               `json:"booking_mode,omitempty"`
+	BookingMode event.BookingMode         `json:"booking_mode,omitempty"`
 	SeatTypes   []event.SeatType          `json:"seat_types,omitempty"`
 	Layouts     []event.Layout            `json:"layouts,omitempty"`
 }
