@@ -75,3 +75,10 @@ type CartModel struct {
 	Status     CartStatus   `json:"status"`              // Status of cart {open, pending, paid}
 	Seats      []event.Seat `json:"seats"`
 }
+
+type ChangeCartStatus struct {
+	UserID     string     `json:"user_id,omitempty"`
+	TimeSlotID string     `json:"time_slot_id,omitempty"`
+	Hash       string     `json:"hash,omitempty"`
+	State      CartStatus `json:"status"`
+}
