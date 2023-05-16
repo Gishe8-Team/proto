@@ -23,7 +23,7 @@ type TimeslotModel struct {
 	Tnos          int                    `boil:"ts_tnos" json:"tnos" toml:"tnos" yaml:"tnos"`
 	Fnos          int                    `boil:"ts_fnos" json:"fnos" toml:"fnos" yaml:"fnos"`
 	BookingMode   booking.BookingMode    `boil:"ts_booking_mode" json:"booking_mode"`
-	Status        booking.TimeslotStatus `boil:"ts_status" json:"status"`
+	Status        booking.TimeSlotStatus `boil:"ts_status" json:"status"`
 	Public        bool                   `boil:"ts_public" json:"public" toml:"public" yaml:"public"`
 	CreatedAt     time.Time              `boil:"ts_created_at" json:"created_at" toml:"created_at" yaml:"created_at"`
 }
