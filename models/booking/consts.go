@@ -1,11 +1,12 @@
 package booking
 
-type TimeslotStatus int
+type TimeSlotStatus int
 
 const (
-	TimeslotOpen TimeslotStatus = iota + 1
-	TimeslotPaused
-	TimeslotFinalized
+	TimeslotStart TimeSlotStatus = iota + 1
+	TimeslotPause
+	TimeslotStop
+	TimeslotFinalize
 )
 
 type CartStatus int8

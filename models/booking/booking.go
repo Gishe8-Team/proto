@@ -8,15 +8,6 @@ type CreateBookingSlot struct {
 	Seats []event.Seat `json:"seats,omitempty"`
 }
 
-type TimeSlotStatus int
-
-const (
-	Start TimeSlotStatus = iota + 1
-	Pause
-	Stop
-	Finalize
-)
-
 // ChangeBookingSlotStatus all the changes on status of timeslots from events are using this struct to change the booking status
 type ChangeBookingSlotStatus struct {
 	TimeslotID string         `json:"timeslot_id"`
