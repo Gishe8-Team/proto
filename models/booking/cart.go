@@ -50,7 +50,7 @@ type ResponseToggleSeat struct {
 	SeatID     string `json:"seat_id"`
 }
 
-// RequestFinalizeCartModel represents the data required to finalize a customer's cart.
+// RequestSubmitCartModel represents the data required to finalize a customer's cart.
 type RequestSubmitCartModel struct {
 	TimeslotID string          `json:"timeslot_id"` // The ID of the timeslot selected by the customer.
 	UserID     string          `json:"user_id"`     // The ID of the user who owns the cart.
@@ -76,6 +76,8 @@ type CartModel struct {
 	Seats      []event.Seat `json:"seats"`
 }
 
+// ChangeCartStatus for changing the status of a cart for reflecting
+// operation of cart like pending for payment or successful payment.
 type ChangeCartStatus struct {
 	UserID     string     `json:"user_id,omitempty"`
 	TimeSlotID string     `json:"time_slot_id,omitempty"`
