@@ -14,7 +14,7 @@ type ChangeBookingSlotStatus struct {
 	State      TimeSlotStatus `json:"state"`
 }
 
-// GetBookingSlot for requesting a singlee timeslot booking data
+// GetBookingSlot for requesting a single timeslot booking data
 type GetBookingSlot struct {
 	TimeslotID string `json:"timeslot_id"`
 }

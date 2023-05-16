@@ -15,16 +15,16 @@ const (
 
 type Meta struct {
 	TimeSlotID  string                    `json:"time_slot_id"`
-	Name        string                    `json:"name"`
-	Description string                    `json:"description"`
-	StartTime   time.Time                 `json:"start_time"`
-	EndTime     time.Time                 `json:"end_time"`
-	Event       event.ViewSmallEventModel `json:"event"`
-	Hall        complex2.HallModel        `json:"hall"`
-	Status      TimeslotStatus            `json:"status"`
-	Background  string                    `json:"background"`
-	PriceGroups []event.PriceGroup        `json:"price_groups"`
-	BookingMode BookingMode               `json:"booking_mode"`
-	SeatTypes   []event.SeatType          `json:"seat_types"`
-	Layouts     []event.Layout            `json:"layouts"`
+	Name        string                    `json:"name,omitempty"`
+	Description string                    `json:"description,omitempty"`
+	StartTime   time.Time                 `json:"start_time,omitempty"`
+	EndTime     time.Time                 `json:"end_time,omitempty"`
+	Event       event.ViewSmallEventModel `json:"event,omitempty"`
+	Hall        complex2.HallModel        `json:"hall,omitempty"`
+	Status      TimeSlotStatus            `json:"status,omitempty"`
+	Background  string                    `json:"background,omitempty"`
+	PriceGroups []event.PriceGroup        `json:"price_groups,omitempty"`
+	BookingMode BookingMode               `json:"booking_mode,omitempty"`
+	SeatTypes   []event.SeatType          `json:"seat_types,omitempty"`
+	Layouts     []event.Layout            `json:"layouts,omitempty"`
 }
