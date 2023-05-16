@@ -11,7 +11,7 @@ const (
 
 type Seat struct {
 	SeatID     string     `json:"seat_id"`
-	SeatNumber int        `json:"seat_number"`
+	SeatNumber string     `json:"seat_number"`
 	X          int        `json:"x"`
 	Y          int        `json:"y"`
 	ZoneID     int8       `json:"zone_id"`
