@@ -20,7 +20,7 @@ const (
 // ChangeBookingSlotStatus all the changes on status of timeslots from events are using this struct to change the booking status
 type ChangeBookingSlotStatus struct {
 	TimeslotID string         `json:"timeslot_id"`
-	State      TimeSlotStatus `json:"state"`
+	Status     TimeSlotStatus `json:"status"`
 }
 
 // GetBookingSlot for requesting a singlee timeslot booking data
