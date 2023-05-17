@@ -1,13 +1,12 @@
 package profile
 
 import (
-	"github.com/gofrs/uuid"
 	"github.com/volatiletech/null/v8"
 )
 
 type Profile struct {
-	ID            uuid.UUID   `boil:"id" json:"id,omitempty"`
-	WalletID      uuid.UUID   `boil:"wallet_id" json:"wallet_id"`
+	ID            string      `boil:"id" json:"id,omitempty"`
+	WalletID      string      `boil:"wallet_id" json:"wallet_id"`
 	ClubID        null.String `boil:"club_id" json:"club_id,omitempty"`
 	IsClubAdmin   null.Bool   `boil:"is_club_admin" json:"is_club_admin,omitempty"`
 	FirstName     string      `boil:"first_name" json:"first_name"`
@@ -23,18 +22,18 @@ type Profile struct {
 }
 
 type QueryProfile struct {
-	UserId        uuid.UUID `json:"user_id,omitempty"`
-	ClubID        uuid.UUID `json:"club_id,omitempty"`
-	IsAdmin       bool      `json:"is_admin,omitempty"`
-	FirstName     string    `json:"first_name,omitempty"`
-	LastName      string    `json:"last_name,omitempty"`
-	OstanID       int       `json:"ostan_id,omitempty"`
-	CityID        string    `json:"city_id,omitempty"`
-	NationalID    string    `json:"national_id,omitempty"`
-	GenderID      int16     `json:"gender_id,omitempty"`
-	WantReminder  bool      `json:"want_reminder,omitempty"`
-	WantPromotion bool      `json:"want_promotion,omitempty"`
-	AvatarURL     string    `json:"avatar_url,omitempty"`
-	Limit         int       `json:"limit,omitempty"`
-	Offset        int       `json:"offset,omitempty"`
+	UserId        string `json:"user_id,omitempty"`
+	ClubID        string `json:"club_id,omitempty"`
+	IsAdmin       bool   `json:"is_admin,omitempty"`
+	FirstName     string `json:"first_name,omitempty"`
+	LastName      string `json:"last_name,omitempty"`
+	OstanID       int    `json:"ostan_id,omitempty"`
+	CityID        string `json:"city_id,omitempty"`
+	NationalID    string `json:"national_id,omitempty"`
+	GenderID      int16  `json:"gender_id,omitempty"`
+	WantReminder  bool   `json:"want_reminder,omitempty"`
+	WantPromotion bool   `json:"want_promotion,omitempty"`
+	AvatarURL     string `json:"avatar_url,omitempty"`
+	Limit         int    `json:"limit,omitempty"`
+	Offset        int    `json:"offset,omitempty"`
 }
