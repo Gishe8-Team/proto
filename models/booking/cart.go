@@ -23,6 +23,10 @@ type ResponseViewCartModelNoLayout struct {
 	Zones []ZoneModel `json:"zones"`
 }
 
+type ResponseViewCartModelRedirectFactor struct {
+	Cart *CartModel `json:"cart"`
+}
+
 // ZoneModel composite to above struct
 type ZoneModel struct {
 	ZoneID int      `json:"zone_id"`
