@@ -33,16 +33,17 @@ type ViewFullEventModel struct {
 }
 
 type ViewSmallEventModel struct {
-	ID          string            `boil:"id" json:"id" toml:"id" yaml:"id"`
-	Name        string            `boil:"name" json:"name,omitempty" toml:"name" yaml:"name,omitempty"`
-	Slug        null.String       `boil:"slug" json:"slug,omitempty" toml:"slug" yaml:"slug,omitempty"`
-	Description null.String       `boil:"description" json:"description,omitempty" toml:"description" yaml:"description,omitempty"`
-	Score       float64           `boil:"score" json:"score,omitempty"`
-	Type        EventsTypeModel   `boil:"type,bind" json:"type" toml:"type" yaml:"type"`
-	Status      EventsStatusModel `boil:"status,bind" json:"status,omitempty" toml:"status" yaml:"status"`
-	Cover       string            `boil:"cover" json:"cover" toml:"cover" yaml:"cover"`
-	Poster      string            `boil:"poster" json:"poster" toml:"poster"`
-	Category    []*CategoryModel  `boil:"-" json:"category"`
+	ID          string                `boil:"id" json:"id" toml:"id" yaml:"id"`
+	Name        string                `boil:"name" json:"name,omitempty" toml:"name" yaml:"name,omitempty"`
+	Slug        null.String           `boil:"slug" json:"slug,omitempty" toml:"slug" yaml:"slug,omitempty"`
+	Description null.String           `boil:"description" json:"description,omitempty" toml:"description" yaml:"description,omitempty"`
+	Score       float64               `boil:"score" json:"score,omitempty"`
+	Type        EventsTypeModel       `boil:"type,bind" json:"type" toml:"type" yaml:"type"`
+	Status      EventsStatusModel     `boil:"status,bind" json:"status,omitempty" toml:"status" yaml:"status"`
+	Cover       string                `boil:"cover" json:"cover" toml:"cover" yaml:"cover"`
+	Poster      string                `boil:"poster" json:"poster" toml:"poster"`
+	Category    []*CategoryModel      `boil:"-" json:"category"`
+	FirstTS     *TimeslotSummeryModel `boil:"-" json:"timeslot,omitempty"`
 }
 
 type EventModel struct {

@@ -21,6 +21,13 @@ const (
 	BookingNoLayout
 )
 
+type TimeslotSummeryModel struct {
+	Hash        string    `boil:"ts_hash" json:"hash,omitempty"`
+	Name        string    `boil:"ts_name" json:"name,omitempty"`
+	Description string    `boil:"ts_description" json:"description,omitempty"`
+	StartTime   time.Time `boil:"ts_start_time" json:"start_time" toml:"start_time" yaml:"start_time"`
+}
+
 type TimeslotModel struct {
 	ID            string         `boil:"ts_id" json:"id" toml:"id" yaml:"id"`
 	Hash          string         `json:"hash" boil:"ts_hash"`
