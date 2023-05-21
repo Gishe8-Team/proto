@@ -19,5 +19,5 @@ type Meta struct {
 	PriceGroups []event.PriceGroup        `json:"price_groups,omitempty"`
 	BookingMode event.BookingMode         `json:"booking_mode,omitempty"`
 	SeatTypes   []event.SeatType          `json:"seat_types,omitempty"`
-	Zones       []event.Layout            `json:"zones,omitempty"`
+	Layouts     []event.Layout            `json:"layouts,omitempty"`
 }

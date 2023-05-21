@@ -29,7 +29,7 @@ type ResponseViewCartModelRedirectFactor struct {
 
 // ZoneModel composite to above struct
 type ZoneModel struct {
-	ZoneID int      `json:"zone_id"`
+	ZoneID int      `json:"layout_id"`
 	Prices []Prices `json:"prices"`
 }
 
