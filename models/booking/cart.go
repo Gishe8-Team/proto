@@ -36,7 +36,7 @@ type ZoneModel struct {
 // Prices composite to above struct
 type Prices struct {
 	event.PriceGroup
-	FreeSeats int `json:"free-seats"`
+	FreeSeats int `json:"free_seats"`
 }
 
 // RequestToggleSeat income from WebSocket Gateway and request do a seat of desired timeslot
