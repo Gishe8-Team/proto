@@ -20,4 +20,5 @@ type Meta struct {
 	BookingMode event.BookingMode         `json:"booking_mode,omitempty"`
 	SeatTypes   []event.SeatType          `json:"seat_types,omitempty"`
 	Layouts     []event.Layout            `json:"layouts,omitempty"`
+	TermsLimit  string                    `json:"terms_limits"`
 }
