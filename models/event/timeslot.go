@@ -39,6 +39,7 @@ type TimeslotModel struct {
 	Layouts       []Layout       `json:"layouts"`
 	EventID       string         `boil:"ts_event_id" json:"event_id" toml:"event_id" yaml:"event_id"`
 	HallID        string         `boil:"ts_hall_id" json:"hall_id" toml:"hall_id" yaml:"hall_id"`
+	ComplexID     string         `boil:"ts_complex_id" json:"complex_id,omitempty"`
 	ArrangementID string         `boil:"ts_arrangement_id" json:"arrangement_id" toml:"arrangement_id" yaml:"arrangement_id"`
 	StartTime     time.Time      `boil:"ts_start_time" json:"start_time" toml:"start_time" yaml:"start_time"`
 	EndTime       time.Time      `boil:"ts_end_time" json:"end_time" toml:"end_time" yaml:"end_time"`
@@ -48,6 +49,7 @@ type TimeslotModel struct {
 	Status        TimeSlotStatus `boil:"ts_status" json:"status"`
 	Public        bool           `boil:"ts_public" json:"public" toml:"public" yaml:"public"`
 	CreatedAt     time.Time      `boil:"ts_created_at" json:"created_at" toml:"created_at" yaml:"created_at"`
+	Date          time.Time      `boil:"date" json:"-"`
 }
 
 type QueryTimeslotModel struct {

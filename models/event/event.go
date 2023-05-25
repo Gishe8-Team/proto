@@ -5,6 +5,7 @@ import (
 	"github.com/Gishe8-Team/proto/models/geo"
 	"github.com/volatiletech/null/v8"
 	"github.com/volatiletech/sqlboiler/v4/types"
+	"time"
 )
 
 type ViewFullEventModel struct {
@@ -26,10 +27,15 @@ type ViewFullEventModel struct {
 	City      []geo.CityModel             `boil:"-" json:"cities"`
 	Category  []*CategoryModel            `boil:"-" json:"category"`
 	Crew      []*ViewSingleEventCrewModel `boil:"-" json:"crew"`
-	TimeSlots []*TimeslotModel            `boil:"-" json:"timeslots"`
+	TimeSlots []*FullEventTimeSlotPanels  `boil:"-" json:"timeslots"`
 	Cover     string                      `boil:"cover" json:"cover" toml:"cover" yaml:"cover"`
 	Poster    string                      `boil:"poster" json:"poster" toml:"poster"`
 	Gallery   types.StringArray           `boil:"images" json:"images" toml:"images" yaml:"images"`
+}
+
+type FullEventTimeSlotPanels struct {
+	Date      time.Time        `json:"date"`
+	TimeSlots []*TimeslotModel `boil:"-" json:"timeslots"`
 }
 
 type ViewSmallEventModel struct {
@@ -44,6 +50,7 @@ type ViewSmallEventModel struct {
 	Poster      string                `boil:"poster" json:"poster" toml:"poster"`
 	Category    []*CategoryModel      `boil:"-" json:"category"`
 	FirstTS     *TimeslotSummeryModel `boil:"-" json:"timeslot,omitempty"`
+	ComingSoon  bool                  `json:"coming_soon"`
 }
 
 type EventModel struct {

@@ -8,6 +8,7 @@ type CategoryModel struct {
 	Title  string      `boil:"title" json:"title" toml:"title" yaml:"title"`
 	Image  null.String `boil:"image" json:"image"`
 	Parent null.String `boil:"parent" json:"parent,omitempty" toml:"parent" yaml:"parent,omitempty"`
+	TypeID null.String `boil:"type_id" json:"type_id,omitempty" toml:"type_id" yaml:"type_id,omitempty"`
 }
 
 type QueryCategoryModel struct {
