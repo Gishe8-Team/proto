@@ -18,10 +18,11 @@ const (
 )
 
 const (
-	CreateEventType = "6.3.1"
-	EditEventType   = "6.3.2"
-	DeleteEventType = "6.3.3"
-	ListEventTypes  = "6.3.4"
+	CreateEventType    = "6.3.1"
+	EditEventType      = "6.3.2"
+	DeleteEventType    = "6.3.3"
+	ListEventTypes     = "6.3.4"
+	TreeTypeCategories = "6.3.5"
 )
 
 const (
