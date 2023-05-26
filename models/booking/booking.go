@@ -5,7 +5,9 @@ import "github.com/Gishe8-Team/proto/models/event"
 // CreateBookingSlot this is the message that events sends when cron job runs and booking is started
 type CreateBookingSlot struct {
 	Meta
-	Seats []event.Seat `json:"seats,omitempty"`
+	HallID    string       `json:"hall_id"`
+	ComplexID string       `json:"complex_id"`
+	Seats     []event.Seat `json:"seats,omitempty"`
 }
 
 // ChangeBookingSlotStatus all the changes on status of timeslots from events are using this struct to change the booking status

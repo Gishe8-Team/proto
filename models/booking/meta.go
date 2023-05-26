@@ -14,10 +14,12 @@ type Meta struct {
 	EndTime     time.Time                 `json:"end_time,omitempty"`
 	Event       event.ViewSmallEventModel `json:"event,omitempty"`
 	Hall        complex2.HallModel        `json:"hall,omitempty"`
+	Complex     complex2.ComplexModel     `json:"complex,omitempty"`
 	Status      event.TimeSlotStatus      `json:"status,omitempty"`
 	Background  string                    `json:"background,omitempty"`
 	PriceGroups []event.PriceGroup        `json:"price_groups,omitempty"`
 	BookingMode event.BookingMode         `json:"booking_mode,omitempty"`
 	SeatTypes   []event.SeatType          `json:"seat_types,omitempty"`
 	Layouts     []event.Layout            `json:"layouts,omitempty"`
+	TermsLimit  string                    `json:"terms_limits"`
 }
