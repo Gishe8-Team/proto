@@ -4,6 +4,8 @@ import "github.com/volatiletech/null/v8"
 
 // CreateAccountRequest to unmarshal request at gateway
 type CreateAccountRequest struct {
+	FirstName  string      `boil:"first_name" json:"first_name"`
+	LastName   string      `boil:"last_name" json:"last_name"`
 	UserName   null.String `boil:"user_name" json:"user_name,omitempty" toml:"user_name" yaml:"user_name,omitempty"`
 	Password   null.String `boil:"password" json:"password,omitempty" toml:"password" yaml:"password,omitempty"`
 	UserEmail  null.String `boil:"user_email" json:"user_email,omitempty" toml:"user_email" yaml:"user_email,omitempty"`

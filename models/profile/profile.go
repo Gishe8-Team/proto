@@ -9,8 +9,8 @@ type Profile struct {
 	WalletID      string      `boil:"wallet_id" json:"wallet_id"`
 	ClubID        null.String `boil:"club_id" json:"club_id,omitempty"`
 	IsClubAdmin   null.Bool   `boil:"is_club_admin" json:"is_club_admin,omitempty"`
-	FirstName     string      `boil:"first_name" json:"first_name"`
-	LastName      string      `boil:"last_name" json:"last_name"`
+	FirstName     null.String `boil:"first_name" json:"first_name"`
+	LastName      null.String `boil:"last_name" json:"last_name"`
 	OstanID       int         `boil:"ostan_id" json:"ostan_id"`
 	CityID        int         `boil:"city_id" json:"city_id"`
 	NationalID    null.String `boil:"nid" json:"national_id,omitempty"`
