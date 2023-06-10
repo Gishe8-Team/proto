@@ -34,7 +34,7 @@ type Faktor struct {
 	StatusID      int16       `boil:"status_id" json:"status_id" toml:"status_id" yaml:"status_id"`
 	TypeID        int16       `boil:"type_id" json:"type_id" toml:"type_id" yaml:"type_id"`
 	TotalPrice    float64     `boil:"total_price" json:"total_price" toml:"total_price" yaml:"total_price"`
-	Discounts     string      `boil:"discounts" json:"discounts" toml:"discounts" yaml:"discounts"`
+	Discounts     null.JSON   `boil:"discounts" json:"discounts" toml:"discounts" yaml:"discounts"`
 	TotalDiscount float64     `boil:"total_discount" json:"total_discount" toml:"total_discount" yaml:"total_discount"`
 	Vat           float64     `boil:"vat" json:"vat" toml:"vat" yaml:"vat"`
 	PayableAmount float64     `boil:"payable_amount" json:"payable_amount" toml:"payable_amount" yaml:"payable_amount"`
