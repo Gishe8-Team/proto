@@ -7,5 +7,6 @@ import (
 
 type Pay struct {
 	Faktor   accounting.Faktor  `json:"faktor"`
+	Vat      float64            `json:"vat"`
 	Checkout payement.Checkouts `json:"checkout"`
 }
