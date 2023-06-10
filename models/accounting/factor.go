@@ -89,6 +89,8 @@ type InvoiceDescription struct {
 	PriceGroupName string  `json:"price_group_name"`
 	PricePrice     float64 `json:"price"`
 	Discounts      []int64 `json:"discounts"`
+	DiscountAmount float64 `json:"discount,omitempty"`
+	FinalPrice     float64 `json:"final_price,omitempty"`
 }
 
 type InvoiceDescriptionSlice []*InvoiceDescription
