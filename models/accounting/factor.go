@@ -4,6 +4,14 @@ import (
 	"github.com/volatiletech/null/v8"
 )
 
+type FaktorStatus int16
+
+const (
+	FAKTOR_PENDING FaktorStatus = iota + 1
+	FAKTOR_PAYED
+	FAKTOR_CANCELLED
+)
+
 //type Factor struct {
 //	//Factor Unique ID
 //	ID string `json:"id"`
@@ -33,11 +41,11 @@ type Faktor struct {
 	CartID        string      `boil:"cart_id" json:"cart_id" toml:"cart_id" yaml:"cart_id"`
 	StatusID      int16       `boil:"status_id" json:"status_id" toml:"status_id" yaml:"status_id"`
 	TypeID        int16       `boil:"type_id" json:"type_id" toml:"type_id" yaml:"type_id"`
-	TotalPrice    float64     `boil:"total_price" json:"total_price" toml:"total_price" yaml:"total_price"`
-	Discounts     null.JSON   `boil:"discounts" json:"discounts" toml:"discounts" yaml:"discounts"`
-	TotalDiscount float64     `boil:"total_discount" json:"total_discount" toml:"total_discount" yaml:"total_discount"`
-	Vat           float64     `boil:"vat" json:"vat" toml:"vat" yaml:"vat"`
-	PayableAmount float64     `boil:"payable_amount" json:"payable_amount" toml:"payable_amount" yaml:"payable_amount"`
+	TotalPrice    float64     `boil:"total_price" json:"total_price,omitempty" toml:"total_price" yaml:"total_price"`
+	Discounts     null.JSON   `boil:"discounts" json:"discounts,omitempty" toml:"discounts" yaml:"discounts"`
+	TotalDiscount float64     `boil:"total_discount" json:"total_discount,omitempty" toml:"total_discount" yaml:"total_discount"`
+	Vat           float64     `boil:"vat" json:"vat,omitempty" toml:"vat" yaml:"vat"`
+	PayableAmount float64     `boil:"payable_amount" json:"payable_amount,omitempty" toml:"payable_amount" yaml:"payable_amount"`
 	TransactionID null.String `boil:"transaction_id" json:"transaction_id,omitempty" toml:"transaction_id" yaml:"transaction_id,omitempty"`
 	TimeslotID    string      `boil:"timeslot_id" json:"timeslot_id" toml:"timeslot_id" yaml:"timeslot_id"`
 	Data          null.JSON   `boil:"data" json:"data,omitempty" toml:"data" yaml:"data,omitempty"`
@@ -72,15 +80,15 @@ type Faktor struct {
 //}
 
 type InvoiceDescription struct {
-	SeatID         string   `json:"seat_id"`
-	SeatRow        string   `json:"seat_row"`
-	SeatNumber     string   `json:"seat_number"`
-	ZoneID         string   `json:"zone"`
-	ZoneName       string   `json:"zone_name"`
-	PriceGroupID   string   `json:"price_group_id"`
-	PriceGroupName string   `json:"price_group_name"`
-	PricePrice     float64  `json:"price"`
-	Discounts      []string `json:"discounts"`
+	SeatID         string  `json:"seat_id"`
+	SeatRow        string  `json:"seat_row"`
+	SeatNumber     string  `json:"seat_number"`
+	ZoneID         string  `json:"zone"`
+	ZoneName       string  `json:"zone_name"`
+	PriceGroupID   string  `json:"price_group_id"`
+	PriceGroupName string  `json:"price_group_name"`
+	PricePrice     float64 `json:"price"`
+	Discounts      []int64 `json:"discounts"`
 }
 
 type InvoiceDescriptionSlice []*InvoiceDescription
