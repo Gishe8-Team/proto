@@ -49,8 +49,8 @@ type Faktor struct {
 	TransactionID null.String `boil:"transaction_id" json:"transaction_id,omitempty" toml:"transaction_id" yaml:"transaction_id,omitempty"`
 	TimeslotID    string      `boil:"timeslot_id" json:"timeslot_id" toml:"timeslot_id" yaml:"timeslot_id"`
 	Data          null.JSON   `boil:"data" json:"data,omitempty" toml:"data" yaml:"data,omitempty"`
-	CreateAt      null.Time   `boil:"create_at" json:"create_at,omitempty" toml:"create_at" yaml:"create_at,omitempty"`
-	UpdateAt      null.Time   `boil:"update_at" json:"update_at,omitempty" toml:"update_at" yaml:"update_at,omitempty"`
+	CreatedAt     null.Time   `boil:"create_at" json:"create_at,omitempty" toml:"create_at" yaml:"create_at,omitempty"`
+	UpdatedAt     null.Time   `boil:"update_at" json:"update_at,omitempty" toml:"update_at" yaml:"update_at,omitempty"`
 	DeletedAt     null.Time   `boil:"deleted_at" json:"deleted_at,omitempty" toml:"deleted_at" yaml:"deleted_at,omitempty"`
 }
 
@@ -100,4 +100,15 @@ type Discount struct {
 	Description     string  `json:"description"`
 	DiscountPercent float64 `json:"discount_percent"`
 	DiscountAmount  float64 `json:"discount_amount"`
+}
+
+// FaktorForPay Request Faktor send for paying
+type FaktorForPay struct {
+	ID string `json:"id"`
+}
+
+type CostFaktorInvoice struct {
+	CampaignID  string  `json:"campaign_id"`
+	Description string  `json:"description"`
+	Price       float64 `json:"price"`
 }
