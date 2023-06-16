@@ -2,6 +2,7 @@ package accounting
 
 import (
 	"github.com/volatiletech/null/v8"
+	"time"
 )
 
 type FaktorStatus int16
@@ -111,4 +112,14 @@ type CostFaktorInvoice struct {
 	CampaignID  string  `json:"campaign_id"`
 	Description string  `json:"description"`
 	Price       float64 `json:"price"`
+}
+
+type FindFaktorRequest struct {
+	UserID         string    `json:"user_id,omitempty"`
+	EventID        string    `json:"event_id,omitempty"`
+	StartTime      time.Time `json:"start_time,omitempty"`
+	EndTime        time.Time `json:"end_time,omitempty"`
+	NotPayedFaktor bool      `json:"not_payed_faktor,omitempty"`
+	Offset         int       `json:"offset"`
+	Limit          int       `json:"limit"`
 }
