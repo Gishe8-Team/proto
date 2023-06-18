@@ -1,23 +1,24 @@
 package services
 
 const (
-	CreateBuyFactor     = "9.1.1"
-	SendFactorToPayment = "9.1.2"
-	CreateCostFactor    = "9.1.3"
+	CreateBuyFactor         = "9.1.1"
+	SendFactorToPayment     = "9.1.2"
+	CreateCostFactor        = "9.1.3"
+	CreateLiquidationFactor = "9.1.4"
 )
 
 const (
-	FindFactorByProfileID  = "9.2.1"
-	FindFactorsByEventID   = "9.2.2"
-	FindFactorsByTimestamp = "9.2.3"
-	FindUnpaidFactors      = "9.2.4"
+	FindFactorWithID       = "9.2.1"
+	FindFactorByProfileID  = "9.2.2"
+	FindFactorsByEventID   = "9.2.3"
+	FindFactorsByTimestamp = "9.2.4"
+	FindUnpaidFactors      = "9.2.5"
 )
 
 const (
 	CalculateEventProfit         = "9.3.1"
-	ListEventFactors             = "9.3.2"
-	CalculateEventSharing        = "9.3.3"
-	CreateLiquidationTransaction = "9.3.4"
+	CalculateEventSharing        = "9.3.2"
+	CreateLiquidationTransaction = "9.3.3"
 )
 
 const (
