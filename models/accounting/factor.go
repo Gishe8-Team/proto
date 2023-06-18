@@ -123,3 +123,8 @@ type FindFaktorRequest struct {
 	Offset         int       `json:"offset"`
 	Limit          int       `json:"limit"`
 }
+
+type LiquidationRequest struct {
+	EventID string  `json:"event_id,omitempty"`
+	Wage    float64 `json:"wage"`
+}
