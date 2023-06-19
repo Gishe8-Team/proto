@@ -138,6 +138,8 @@ type CostFaktorInvoice struct {
 }
 
 type LiquidationRequest struct {
-	EventID string  `json:"event_id,omitempty"`
-	Wage    float64 `json:"wage"`
+	EventID    string  `json:"event_id"`
+	EventTitle string  `json:"event_title"`
+	Fee        float64 `json:"Fee"`
+	UserID     string  `json:"user_id"`
 }
