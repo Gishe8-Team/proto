@@ -2,7 +2,6 @@ package accounting
 
 import (
 	"github.com/volatiletech/null/v8"
-	"time"
 )
 
 type FaktorStatus int16
@@ -49,10 +48,29 @@ type Faktor struct {
 	PayableAmount float64     `boil:"payable_amount" json:"payable_amount,omitempty" toml:"payable_amount" yaml:"payable_amount"`
 	TransactionID null.String `boil:"transaction_id" json:"transaction_id,omitempty" toml:"transaction_id" yaml:"transaction_id,omitempty"`
 	TimeslotID    string      `boil:"timeslot_id" json:"timeslot_id" toml:"timeslot_id" yaml:"timeslot_id"`
+	TimeslotTitle null.String `boil:"timeslot_title" json:"timeslot_title,omitempty" toml:"timeslot_title" yaml:"timeslot_title,omitempty"`
 	Data          null.JSON   `boil:"data" json:"data,omitempty" toml:"data" yaml:"data,omitempty"`
 	CreatedAt     null.Time   `boil:"created_at" json:"created_at,omitempty" toml:"created_at" yaml:"created_at,omitempty"`
 	UpdatedAt     null.Time   `boil:"updated_at" json:"updated_at,omitempty" toml:"updated_at" yaml:"updated_at,omitempty"`
 	DeletedAt     null.Time   `boil:"deleted_at" json:"deleted_at,omitempty" toml:"deleted_at" yaml:"deleted_at,omitempty"`
+}
+
+type FaktorFullModel struct {
+	ID            string      `boil:"id" json:"id" toml:"id" yaml:"id"`
+	UserID        string      `boil:"user_id" json:"user_id" toml:"user_id" yaml:"user_id"`
+	CartID        string      `boil:"cart_id" json:"cart_id" toml:"cart_id" yaml:"cart_id"`
+	Status        int16       `boil:",bind" json:"status_id" toml:"status_id" yaml:"status_id"`
+	Type          int16       `boil:",bind" json:"type_id" toml:"type_id" yaml:"type_id"`
+	TotalPrice    float64     `boil:"total_price" json:"total_price,omitempty" toml:"total_price" yaml:"total_price"`
+	Discounts     null.JSON   `boil:"discounts" json:"discounts,omitempty" toml:"discounts" yaml:"discounts"`
+	TotalDiscount float64     `boil:"total_discount" json:"total_discount,omitempty" toml:"total_discount" yaml:"total_discount"`
+	Vat           float64     `boil:"vat" json:"vat,omitempty" toml:"vat" yaml:"vat"`
+	PayableAmount float64     `boil:"payable_amount" json:"payable_amount,omitempty" toml:"payable_amount" yaml:"payable_amount"`
+	TransactionID null.String `boil:"transaction_id" json:"transaction_id,omitempty" toml:"transaction_id" yaml:"transaction_id,omitempty"`
+	TimeslotID    string      `boil:"timeslot_id" json:"timeslot_id" toml:"timeslot_id" yaml:"timeslot_id"`
+	TimeslotTitle null.String `boil:"timeslot_title" json:"timeslot_title,omitempty" toml:"timeslot_title" yaml:"timeslot_title,omitempty"`
+	Data          null.JSON   `boil:"data" json:"data,omitempty" toml:"data" yaml:"data,omitempty"`
+	CreatedAt     null.Time   `boil:"created_at" json:"created_at,omitempty" toml:"created_at" yaml:"created_at,omitempty"`
 }
 
 //type InvoiceDescription struct {
@@ -112,16 +130,6 @@ type CostFaktorInvoice struct {
 	CampaignID  string  `json:"campaign_id"`
 	Description string  `json:"description"`
 	Price       float64 `json:"price"`
-}
-
-type FindFaktorRequest struct {
-	UserID         string    `json:"user_id,omitempty"`
-	EventID        string    `json:"event_id,omitempty"`
-	StartTime      time.Time `json:"start_time,omitempty"`
-	EndTime        time.Time `json:"end_time,omitempty"`
-	NotPayedFaktor bool      `json:"not_payed_faktor,omitempty"`
-	Offset         int       `json:"offset"`
-	Limit          int       `json:"limit"`
 }
 
 type LiquidationRequest struct {
